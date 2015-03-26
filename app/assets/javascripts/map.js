@@ -69,8 +69,10 @@ var createPlaceButton = document.getElementById('new-place');
 
 google.maps.event.addDomListener(createPlaceButton, 'click', function(e) {
 
+  console.log(map.getCenter().lat());
+
   var newMarker = new google.maps.Marker({
-    position: new google.maps.LatLng(0,0.5),
+    position: new google.maps.LatLng(map.getCenter().lat(),map.getCenter().lng()),
     map: map,
     title: 'newLocation',
     draggable: true
@@ -82,18 +84,28 @@ google.maps.event.addDomListener(createPlaceButton, 'click', function(e) {
 });
 
   // resets bounds at click of button
-  var cityBtn = document.getElementsByClassName('city-btn');
+  // var cityBtn = document.getElementsByClassName('city-btn');
 
-  // turn this into a function
-  google.maps.event.addDomListener(cityBtn[0], 'click', function(e){
-    console.log('bum')
-    var southWest = new google.maps.LatLng((51.5051528 + 0.05),(-0.0756639 - 0.05));
-    var northEast = new google.maps.LatLng((51.5051528 - 0.05),(-0.0756639 + 0.05));
-    var bounds = new google.maps.LatLngBounds(southWest,northEast);
-    map.fitBounds(bounds);
+  // // turn this into a function
+  // google.maps.event.addDomListener(cityBtn[0], 'click', function(e){
+  //   console.log('bum')
+  //   var southWest = new google.maps.LatLng((51.5051528 + 0.05),(-0.0756639 - 0.05));
+  //   var northEast = new google.maps.LatLng((51.5051528 - 0.05),(-0.0756639 + 0.05));
+  //   var bounds = new google.maps.LatLngBounds(southWest,northEast);
+  //   map.fitBounds(bounds);
+  // })
+
+  $(".city-click").on('click', function(){
+    var city = $(this)
+    var lat = city.data("city-latitude")
+    var lng = city.data("city-longitude")
+    map.setCenter(new google.maps.LatLng(lat,lng))
+    map.setZoom(10)
   })
 
-  
+
+
+
 
 }
 

@@ -1,19 +1,28 @@
-.hidden {
-  display: none;
-}
-
-
-
-.partials {
-  height:100%;
-  width: 100%;
-}
-
 html, body {
   height: 100%;
   margin: 0px;
   padding: 0px
 }
+
+#city-nav ul{
+  list-style: none;
+}
+/*#city-nav{
+  float:left;
+}*/
+
+
+.hidden {
+  display: none;
+}
+
+.partials {
+  float:right;
+  height:100%;
+  width: 100%;
+  /*display: inline-block;*/
+}
+
 
 #map-canvas {
   height: 50%;
@@ -21,6 +30,22 @@ html, body {
   margin: 0 auto;
   margin-top: 100px
 }
+
+#new-form {
+  display:none;
+}
+
+#user-id {
+  display: none;
+}
+
+
+
+
+
+
+
+
 
  /*.controls {
    margin-top: 16px;
@@ -53,25 +78,17 @@ html, body {
   font-family: Roboto;
 }*/
 
-#type-selector {
+/*#type-selector {
   color: #fff;
   background-color: #4d90fe;
   padding: 5px 11px 0px 11px;
-}
+}*/
 
-#type-selector label {
+/*#type-selector label {
   font-family: Roboto;
   font-size: 13px;
   font-weight: 300;
-}
-#target {
+}*/
+/*#target {
   width: 345px;
-}
-
-#new-form {
-  display:none;
-}
-
-#user-id {
-  display: none;
-}
+}*/

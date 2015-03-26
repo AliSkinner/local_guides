@@ -4,9 +4,10 @@ class PlacesController < ApplicationController
 
 
   def index
+    @city = City.new
 
     @cities = City.all
-    
+
     @places = Place.all
     respond_to do |format|
       format.html

@@ -1,7 +1,11 @@
+<ul>
 <% @cities.each do |city| %>
-  <ul>
-    <li>
+    <li data-city-name= <%= city.name %>
+    data-city-latitude= <%= city.latitude %>
+    data-city-longitude= <%= city.longitude %>
+    class="city-click">
+    
       <%= city.name %>
     </li>
-  </ul>
 <% end %>
+</ul>

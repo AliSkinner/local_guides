@@ -14,12 +14,12 @@ u4 = User.create(name: "Juan Cortez", image: "http://placecage.com/200/300", ema
 u5 = User.create(name: "Giuseppe Blanco", image: "http://placecage.com/200/300", email: "giuseppe@mailinator.com", password:"password", password_confirmation: "password")
 u6 = User.create(name: "Johann Johannsen ", image: "http://placecage.com/200/300", email: "johann@mailinator.com", password:"password", password_confirmation: "password")
 
-c1 = City.create(name: "London")
-c2 = City.create(name: "Paris")
-c3 = City.create(name: "Berlin")
-c4 = City.create(name: "Madrid")
-c5 = City.create(name: "Rome")
-c6 = City.create(name: "Stockholm")
+c1 = City.create(name: "London", latitude: 51.507350899999998716793925268575549126, longitude: -0.127758299999999991314325598068535328)
+c2 = City.create(name: "Paris", latitude: 48.856614000000000430645741289481520653, longitude: 2.352221899999999976671460899524390697)
+c3 = City.create(name: "Berlin", latitude: 52.520006599999987884075380861759185791, longitude: 13.404954000000000036152414395473897457)
+c4 = City.create(name: "Madrid", latitude: 40.416775399999998796829459024593234062, longitude: -3.703790199999999810387407706002704799)
+c5 = City.create(name: "Rome", latitude: 41.902783499999998184648575261235237122, longitude: 12.496365499999999570945874438621103764)
+c6 = City.create(name: "Stockholm", latitude: 59.329323499999986779585015028715133667, longitude: 18.068580799999999442206899402663111687)
 
 # puts users into cities
 c1.users << u1
