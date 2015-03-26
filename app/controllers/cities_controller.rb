@@ -1,6 +1,6 @@
 class CitiesController < ApplicationController
 
- 
+
 
 
 
