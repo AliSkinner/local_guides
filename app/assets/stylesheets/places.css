@@ -17,7 +17,7 @@ html, body {
 }
 
 .partials {
-  float:right;
+  /*float:right;*/
   height:100%;
   width: 100%;
   /*display: inline-block;*/
@@ -35,9 +35,9 @@ html, body {
   display:none;
 }
 
-#user-id {
+/*#user-id {
   display: none;
-}
+}*/
 
 
 
