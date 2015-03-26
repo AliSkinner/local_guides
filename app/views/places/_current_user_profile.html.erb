@@ -1,0 +1,18 @@
+  
+<h1><%= current_user.name %></h1>
+<%= image_tag(current_user.image) %>
+<h4><%= current_user.city.name %></h4>
+
+<table class="user-places-table">
+  <% current_user.places.each do |place| %>
+  <tr>
+    <td>
+      <%= place.title %>
+    </td>
+    <td>
+      <%= place.user.city.name %>
+    </td>
+    <% end %>
+  </tr>
+
+</table>

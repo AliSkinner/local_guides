@@ -3,13 +3,26 @@
 <head>
   <title>LocalGuides</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <login>
+    <% if current_user %>
+      <%= current_user.name %>
+      |
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path %>
+      <%= link_to "Register", new_user_registration_path %>
+    <% end %>
+  </login>
+
   <%= yield %>
+
 
 </body>
 </html>

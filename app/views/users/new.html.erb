@@ -1,0 +1,61 @@
+<%= form_for(@user) do |f| %>
+  <p>
+    <div class="field">
+      <%= f.label :name  %>
+      <br/>
+      <%= f.text_field :name %>
+    </div>
+  </p>
+  <p>
+    <div class="field">
+      <%= f.label :email %>
+      <br/>
+      <%= f.text_field :email %>
+    </div>
+  </p>
+  <p>
+    <div class="field">
+      <%= f.label :country %>
+      <br/>
+      <%= f.text_field :country %>
+    </div>
+  </p>
+  <p>
+    <div class="field">
+      <%= f.label :bio %>
+      <br/>
+      <%= f.text_area :bio %>
+    </div>
+  </p>
+  <p>
+    <div class="field">
+      <%= f.label :website %>
+      <br/>
+      <%= f.text_field :website %>
+    </div>
+  </p>
+  <p>
+    <div class="field">
+      <%= f.label 'Twitter: @' %>
+      <br/>
+      <%= f.text_field :twitter %>
+    </div>
+  </p>
+  <p>
+    <div class="field">
+      <%= f.label :profile_pic %>
+      <%= f.file_field :profile_pic %>
+      <br/>
+      <p>
+        <%= f.label "or use a URL" %>
+        <br/>
+        <%= f.text_field :remote_profile_pic_url %>
+      </p>
+    </div>
+  </p>
+  <p>
+    <div class="actions">
+      <%= f.submit :class => "submit" %>
+    </div>
+  </p>
+<% end %>
