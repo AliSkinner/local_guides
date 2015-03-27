@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :reviews
   has_many :messages
   
-
+  mount_uploader :image, UserImageUploader
  
   
 end
