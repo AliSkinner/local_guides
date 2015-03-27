@@ -39,13 +39,14 @@ function initialize() {
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: marker.address,
-          address: marker.address
+          title: marker.title,
+          address: marker.address,
+          image: marker.image
 
         });
 
 
-        var infoWindowContent = '<div id="info-window-content"><h5>' + marker.title + '</h5></div>';
+        var infoWindowContent = '<div id="info-window-content"><h5>' + marker.title +  '</h5></div>';
 
         var infowindow = new google.maps.InfoWindow({
           content: infoWindowContent
@@ -65,9 +66,9 @@ function initialize() {
     })
   }); // end of ajax
 
-var createPlaceButton = document.getElementById('new-place');
+var revealPlaceForm = document.getElementById('reveal-place-form');
 
-google.maps.event.addDomListener(createPlaceButton, 'click', function(e) {
+google.maps.event.addDomListener(revealPlaceForm, 'click', function(e) {
 
   console.log(map.getCenter().lat());
 

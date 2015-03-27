@@ -8,10 +8,13 @@ class PlacesController < ApplicationController
 
     @cities = City.all
 
+    @place = Place.new
+
     @places = Place.all
     respond_to do |format|
       format.html
       format.json { render json: @places}
+      # format.js
     end
 
 
@@ -20,21 +23,35 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @place }
+      format.js
+    end
+
   end
 
 
   def create
-    @place = Place.new(place_params)
-
+    @place = Place.create(place_params)
     respond_to do |format|
-      if @place.save
-        format.html { redirect_to @place, notice: 'Place was successfully created.' }
-        format.json { render json: @place}
-      else
-        format.html { render :new }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
+      format.html # new.html.erb
+      format.json { render json: @place }
+      format.js
     end
+
+    # respond_to do |format|
+    #   if @place.save
+    #     format.html { redirect_to @place, notice: 'Place was successfully created.' }
+    #     format.json { render json: @place}
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @place.errors, status: :unprocessable_entity }
+    #   end
+    # redirect_to action: :index
+
+    # end
+
   end
 
 
