@@ -9,11 +9,12 @@ html, body {
   display: none;
 }
 
-.partials {
+.partial {
+  margin:0 auto;
   /*float:right;*/
-  height:100%;
-  width: 100%;
-  /*display: inline-block;*/
+  height:inherit;
+  width: 80%;
+  display: inline-block;
 }
 
 nav {
@@ -26,4 +27,11 @@ nav {
   display: inline-block;
   /*right:0;*/
   margin-left: 980px;
+}
+
+#city-nav{
+  left:0;
+  /*height: 80%;*/
+  float: left;
+  display:inline-block;
 }

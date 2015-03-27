@@ -4,5 +4,17 @@
   display: inline-block;
   width: 50%;
   padding: 3%;
-  overflow: hidden;
+}
+
+.profile-user-image {
+  float:left;
+}
+
+.profile-user-details {
+  /*float: right;*/
+}
+
+.info {
+  width: 100%;
+  display: block;
 }

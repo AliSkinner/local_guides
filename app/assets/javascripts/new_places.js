@@ -24,6 +24,9 @@ $(document).ready(function(){
       }).done(function(response){
         console.log(response)
        
+       $("#current-user-places-table").append('<tr><td>' + response.title + '</td><td>' + response.city + '</td></tr>')
+
+
         $("#new-form").slideToggle('slow', function(){
           $("#new-place").text("create new place");
           $("#new-title").val("");

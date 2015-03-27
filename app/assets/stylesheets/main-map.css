@@ -1,8 +1,13 @@
+#main-map-view{
+  height:100%;
+  width:100%;
+}
+
 #map-canvas {
-  height: 50%;
-  width:70%;
+  height: 60%;
+  width:100%;
   margin: 0 auto;
-  margin-top: 100px
+  /*margin-top: 100px*/
 }
 
 #new-form {
@@ -13,13 +18,10 @@
   list-style: none;
 }
 
-#city-nav{
-  left:0;
-  height: 80%;
-  display:inline-block;
+
+#reveal-place-form {
+  text-align: right;
 }
-
-
 
 
 

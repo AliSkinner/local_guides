@@ -1,12 +1,16 @@
-<div id="main-map-view" class="partials"> 
-  <%= render 'main_map_view' %>
-</div>
-
-<div id="city-nav">
+<div id="city-nav" class="col-md-2">
   <%= render 'city_list' %>
 </div>
 
-<div id="current-user-view" class="hidden partials"> 
-  <%= render 'current_user_profile' %>
-</div>
+<div class="partial col-md-8 col-md-offset-1">
 
+  <div id="main-map-view" class="col-md-8"> 
+    <%= render 'main_map_view' %>
+  </div>
+
+
+  <div id="current-user-view" class="col-md-8"> 
+    <%= render 'current_user_profile' %>
+  </div>
+
+</div>
