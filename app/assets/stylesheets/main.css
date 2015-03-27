@@ -15,6 +15,7 @@ html, body {
   height:inherit;
   width: 80%;
   display: inline-block;
+  position: absolute;
 }
 
 nav {
@@ -26,7 +27,7 @@ nav {
 #login {
   display: inline-block;
   /*right:0;*/
-  margin-left: 980px;
+  margin-left: 900px;
 }
 
 #city-nav{
@@ -34,4 +35,10 @@ nav {
   /*height: 80%;*/
   float: left;
   display:inline-block;
+}
+
+.close-window {
+  border: 1px solid black;
+  display: inline-block;
+  width:20px;
 }

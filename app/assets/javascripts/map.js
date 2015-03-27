@@ -27,7 +27,7 @@ function initialize() {
       var markers = [];
       console.log(response)
       $.each(response, function(index, place) {
-        markers.push({title: place.title, latitude: place.lat, longitude: place.lng, user_id: place.user_id })
+        markers.push({title: place.title, latitude: place.lat, longitude: place.lng, user_id: place.user_id, thumbImage: place.image.thumb.url, mainImage: place.image.main.url, description: place.description, id: place.id })
       });
 
       $.each(markers, function(index, marker) {
@@ -41,27 +41,71 @@ function initialize() {
           map: map,
           title: marker.title,
           address: marker.address,
-          image: marker.image
+          thumbImage: marker.thumbImage,
+          mainImage: marker.mainImage,
+          description: marker.description,
+          id: marker.id
 
         });
 
-
-        var infoWindowContent = '<div id="info-window-content"><h5>' + marker.title +  '</h5></div>';
+        var infoWindowContent = '<div id="info-window-content"><img src=' + 
+                                marker.thumbImage + 
+                                ' id="infowindow-image" data-place-id=' + 
+                                marker.id +
+                                 '><h5>' +
+                                 marker.title + 
+                                  '</h5><p>' + 
+                                  marker.description + 
+                                  '</p></div>';
 
         var infowindow = new google.maps.InfoWindow({
-          content: infoWindowContent
+          content: infoWindowContent,
+          maxWidth: 200
         });
+
 
         google.maps.event.addListener(marker, 'click', function() {
           // console.log(marker.address)
           infowindow.open(map, marker);
+          $("#infowindow-image").on('click', function(){
+            var placeId = $("#infowindow-image").data("place-id");
+            // var profilePlace = marker
+            console.log(marker)
+            $('#place-profile-title').text("");
+            $('#place-profile-image').attr(('src'), (""));
+            $('#place-profile-description').text("");
+            $('#place-profile-title').append(marker.title);
+            $('#place-profile-image').attr(('src'), (marker.mainImage));
+            $('#place-profile-description').append(marker.description);
+
+           
+
+            
+
+
+
+
+            // $.ajax({
+            //   url: "/places",
+            //   type: "GET",
+            //   dataType: "JSON",
+            //   response:{}
+            // }).done(function(response){
+            //   console.log(response);
+            // })
+
+            $("#place-profile").show();
+          })
         });
 
       });
 
+
+
+
       map.fitBounds(bounds);
-      var input = (document.getElementById('pac-input'));
-      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+      // var input = (document.getElementById('pac-input'));
+      // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     })
   }); // end of ajax
@@ -103,8 +147,6 @@ google.maps.event.addDomListener(revealPlaceForm, 'click', function(e) {
     map.setCenter(new google.maps.LatLng(lat,lng))
     map.setZoom(10)
   })
-
-
 
 
 

@@ -34,13 +34,13 @@ class PlaceImageUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
 
   version :main do
-    process :resize_to_fit => [200, 200]
+    process :resize_to_fit => [400, 400]
   end
 
 
 
   version :thumb do
-    process :resize_to_fit => [50, 50]
+    process :resize_to_fit => [150, 150]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
