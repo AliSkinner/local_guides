@@ -1,6 +1,6 @@
   
-<h1><%= current_user.name %></h1>
-<%= image_tag(current_user.image) %>
+<h1 class="profile-user-name"><%= current_user.name %></h1>
+<%= image_tag(current_user.image, class: "profile-user-image")  %>
 <h4><%= current_user.city.name %></h4>
 
 <table class="user-places-table">

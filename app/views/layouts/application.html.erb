@@ -8,19 +8,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <login>
-    <% if current_user %>
-      <%= current_user.name %>
+  <nav>
+    <span id="map-view-reveal">HOME</span>
+
+    <login id="login">
+      <% if current_user %>
+      <span id="current-user-link"><%= current_user.name %></span>
       |
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
+      <% else %>
       <%= link_to "Sign In", new_user_session_path %>
       <%= link_to "Register", new_user_registration_path %>
-    <% end %>
-  </login>
-
+      <% end %>
+    </login>
+  </nav>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <%= yield %>
 
 

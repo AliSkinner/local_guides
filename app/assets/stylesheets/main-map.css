@@ -1,29 +1,3 @@
-html, body {
-  height: 100%;
-  margin: 0px;
-  padding: 0px
-}
-
-#city-nav ul{
-  list-style: none;
-}
-/*#city-nav{
-  float:left;
-}*/
-
-
-.hidden {
-  display: none;
-}
-
-.partials {
-  /*float:right;*/
-  height:100%;
-  width: 100%;
-  /*display: inline-block;*/
-}
-
-
 #map-canvas {
   height: 50%;
   width:70%;
@@ -35,9 +9,17 @@ html, body {
   display:none;
 }
 
-/*#user-id {
-  display: none;
-}*/
+#city-nav ul{
+  list-style: none;
+}
+
+#city-nav{
+  left:0;
+  height: 80%;
+  display:inline-block;
+}
+
+
 
 
 

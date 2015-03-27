@@ -1,0 +1,29 @@
+html, body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(253,246,227);
+}
+
+.hidden {
+  display: none;
+}
+
+.partials {
+  /*float:right;*/
+  height:100%;
+  width: 100%;
+  /*display: inline-block;*/
+}
+
+nav {
+  background-color: rgb(56,121,217);
+  height: 10%;
+  font-size: 25px;
+}
+
+#login {
+  display: inline-block;
+  /*right:0;*/
+  margin-left: 980px;
+}

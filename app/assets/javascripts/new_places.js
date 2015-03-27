@@ -5,22 +5,7 @@ $(document).ready(function(){
     $("#new-form").slideToggle('slow', function(){
     });
   });
-
-
-  // $("#new-form").on('submit', 'new_place', function(e){
-  //   $(e).preventDefault();
-  //   // $form = $(this)
-  //   // console.log(this)
-  //   $("#new-form").slideToggle('slow', function(){
-  //     $("#new-place").text("create new place");
-  //     $("#new-title").val("");
-  //     $("#new-lat").val("");
-  //     $("#new-long").val("");
-  //   });
-  // });
-
  
-
   
   $("#submit-place-form").on('click', function(){
 
@@ -51,7 +36,6 @@ $(document).ready(function(){
           $("#new-form").prepend("<p>Make sure fields are valid</p>")
     }
   })
-
 })
 
 
