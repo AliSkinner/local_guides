@@ -80,12 +80,13 @@ function initialize() {
             $('#place-profile-image').attr(('src'), (marker.mainImage));
             $('#place-profile-description').append(marker.description);
 
-           
-
-            
-
             $("#place-profile").fadeToggle('slow');
           })
+
+          google.maps.event.addListener(map, 'click', function(){
+            infowindow.close()
+          });
+
         });
 
       });
