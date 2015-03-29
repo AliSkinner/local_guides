@@ -13,7 +13,7 @@ function initialize() {
 
   // calling places out of database 
 
-  $(document).ready(function(){
+  // $(document).ready(function(){
     $.ajax({
       url: "/places",
       type: "GET",
@@ -98,7 +98,7 @@ function initialize() {
       // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     })
-  }); // end of ajax
+  // }); // end of ajax
 
 var revealPlaceForm = document.getElementById('reveal-place-form');
 

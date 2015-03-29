@@ -1,5 +1,13 @@
 class CitiesController < ApplicationController
 
+  def index
+    @cities = City.all
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @cities }
+      format.js
+    end
+  end
 
   def new
     @city = City.new
