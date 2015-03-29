@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :places
   resources :cities
+  resources :comments
 
 
   # You can have the root of your site routed with "root"

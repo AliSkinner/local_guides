@@ -10,14 +10,14 @@ class PlacesController < ApplicationController
 
     @place = Place.new
 
+    @comments = Comment.all
+
     @places = Place.all
     respond_to do |format|
       format.html
       format.json { render json: @places}
       # format.js
     end
-
-
 
   end
 

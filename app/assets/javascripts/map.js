@@ -74,6 +74,8 @@ function initialize() {
             $('#place-profile-title').text("");
             $('#place-profile-image').attr(('src'), (""));
             $('#place-profile-description').text("");
+            $('#place-id').text("");
+            $('#place-id').text(marker.id);
             $('#place-profile-title').append(marker.title);
             $('#place-profile-image').attr(('src'), (marker.mainImage));
             $('#place-profile-description').append(marker.description);
@@ -82,19 +84,7 @@ function initialize() {
 
             
 
-
-
-
-            // $.ajax({
-            //   url: "/places",
-            //   type: "GET",
-            //   dataType: "JSON",
-            //   response:{}
-            // }).done(function(response){
-            //   console.log(response);
-            // })
-
-            $("#place-profile").show();
+            $("#place-profile").fadeToggle('slow');
           })
         });
 

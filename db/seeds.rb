@@ -8,11 +8,11 @@
 
 
 u1 = User.create(name: "John Smith", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), email: "john@mailinator.com", password:"password", password_confirmation: "password")
-u2 = User.create(name: "Pierre Dupont", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), password:"password", password_confirmation: "password")
-u3 = User.create(name: "Hans Schwitzel", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), password:"password", password_confirmation: "password")
-u4 = User.create(name: "Juan Cortez", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), password:"password", password_confirmation: "password")
-u5 = User.create(name: "Giuseppe Blanco", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), password:"password", password_confirmation: "password")
-u6 = User.create(name: "Johann Johannsen ", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), password:"password", password_confirmation: "password")
+u2 = User.create(name: "Pierre Dupont", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), email: "pierre@mailinator.com", password:"password", password_confirmation: "password")
+u3 = User.create(name: "Hans Schwitzel", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), email: "hans@mailinator.com", password:"password", password_confirmation: "password")
+u4 = User.create(name: "Juan Cortez", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), email: "juan@mailinator.com", password:"password", password_confirmation: "password")
+u5 = User.create(name: "Giuseppe Blanco", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), email: "Giuseppe@mailinator.com", password:"password", password_confirmation: "password")
+u6 = User.create(name: "Johann Johannsen ", image: File.open(Rails.root + "app/assets/images/seed-profile.jpg"), email: "johann@mailinator.com", password:"password", password_confirmation: "password")
 
 c1 = City.create(name: "London", latitude: 51.507350899999998716793925268575549126, longitude: -0.127758299999999991314325598068535328)
 c2 = City.create(name: "Paris", latitude: 48.856614000000000430645741289481520653, longitude: 2.352221899999999976671460899524390697)

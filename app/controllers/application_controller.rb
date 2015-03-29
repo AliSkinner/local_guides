@@ -12,4 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
 
+    @comments = Comment.all
+
+
 end

@@ -1,6 +1,15 @@
 <div class="close-window">X</div>
+<span id="place-id" class="hidden"></span>
 <h1 id="place-profile-title"></h1>
 <img src="" id="place-profile-image">
 <p id="place-profile-description"></p>
-<p id="place-profile-user">Posted by: </p>
-<%= User.find(1).name %>
+<p id="place-profile-user">Posted by: <!-- < %= User.find(1).name %> --></p>
+
+<button id="view-comments">comments...</button>
+
+<div id="comment-section">
+  <textarea name="comment" id="new-comment-field" cols="60" rows="5" placeholder="Leave a comment..."></textarea>
+  <button id="submit-comment">Submit Comment</button>
+
+  <div id="place-comments"></div>
+</div>
