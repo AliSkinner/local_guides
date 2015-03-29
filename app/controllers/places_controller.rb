@@ -9,7 +9,7 @@ class PlacesController < ApplicationController
     @cities = City.all
 
     @place = Place.new
-
+    
     @comments = Comment.all
 
     @places = Place.all

@@ -6,5 +6,7 @@ class Place < ActiveRecord::Base
   
   mount_uploader :image, PlaceImageUploader
   
+  reverse_geocoded_by :lat, :lng
+  after_validation :reverse_geocode  
   
 end
