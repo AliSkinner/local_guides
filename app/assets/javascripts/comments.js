@@ -1,39 +1,33 @@
 $(document).ready(function(){
 
+  // hide comments on load
+
   $("#comment-section").hide()
 
+  // get the info for this place
 
   $("#view-comments").on("click", function(){
     $("#place-comments").html("")
     $.ajax({
-      url: "/comments",
+      url: "/places/" + parseInt($('#place-id').text()),
       type: "GET",
       dataType: "JSON"
     }).done(function(response){
+      var comments = response.comments;
 
-      var $filteredComments = []
+      // append to comment section before slide-down
 
-      $.grep(response, function(k,v){
-        if (k.place_id === parseInt($("#place-id").text())){
-        $filteredComments.push(k)
-        }
-      })
-      console.log($filteredComments)
-      $.each($filteredComments, (function(index, comment){
+      $.each(comments, (function(index, comment){
         console.log(comment.body)
-        // $("#place-comments").html("")
-        $("#place-comments").append('<table class="comment"><tr><td>' + comment.user_id + '</td><td>' + comment.updated_at + '</td></tr><tr><td>' + comment.body + '</td></tr></table>')
+        $("#place-comments").html("")
+        $("#place-comments").append('<table class="comment"><tr><td>' + comment.user.name + '</td><td>' + comment.updated_at + '</td></tr><tr><td>' + comment.body + '</td></tr></table>')
       }))
+     $(".comment:even").css( "background-color", "#bbf" ); 
     })
-
-
     $("#comment-section").slideToggle('slow')
-
   });
 
-
-
-
+  // create comment
 
   $('#submit-comment').on('click', function(){
     var $comment = $('#new-comment-field').val();
@@ -46,14 +40,21 @@ $(document).ready(function(){
       dataType: "JSON",
       data: { comment : {"body" : $comment, "user_id" : $userId, "place_id" : $placeId }}
     }).done(function(response){
+
+      // clear field
+
       $('#new-comment-field').val("")
       console.log(response)
       var $body = response.body;
       var userName = $("#current-user-link").text()
 
-      $("#place-comments").append('<table class="comment"><tr><td>' + response.user_id + '</td><td>' + response.updated_at + '</td></tr><tr><td>' + response.body + '</td></tr></table>');
+      // append to commentst list
 
+      $("#place-comments").append('<table class="comment"><tr><td>' + response.user.name + '</td><td>' + response.updated_at + '</td></tr><tr><td><img src=' + response.user.image.thumb.url + '></td><td>' + response.body + '</td></tr></table>');
     })
+
+     $(".comment:even").css( "background-color", "#bbf" ); 
+
   });
 
 });

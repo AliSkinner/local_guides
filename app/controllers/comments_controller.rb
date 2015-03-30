@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     @comment = Comment.create(comment_params)
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @comment }
+      format.json { render json: @comment, include: :user }
       format.js
     end
   end
