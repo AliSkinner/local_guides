@@ -1,5 +1,4 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
 
@@ -12,13 +11,25 @@ class PlacesController < ApplicationController
     
     @comments = Comment.all
 
+    # @places = Place.includes(:comments).all
     @places = Place.all
     respond_to do |format|
       format.html
-      format.json { render json: @places}
+      format.json { render json: @places }
       # format.js
     end
 
+  end
+  # { only: [:body, :user_id, :place_id] } 
+  def show
+    place = Place.find(params[:id])
+    respond_to do |format|
+      format.json { render json: place, include: 
+        { comments: 
+          { include: :user } 
+        }
+      } 
+    end
   end
 
   def new

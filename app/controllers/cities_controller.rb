@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
 
   def index
-    @cities = City.all
+    @cities = City.all.includes(:users)
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @cities }
@@ -18,6 +18,17 @@ class CitiesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @city = City.find(params[:id])
+    respond_to do |format|
+      format.json { render json: @city, include: 
+        { users: { include: [{ places: { include: :comments } }, :reviews] }
+      }
+    }
+  end
+end
+
+  
 
   private 
   def city_params
