@@ -57,7 +57,8 @@ background-image:
 }
 
 .close-window {
-  border: 1px solid rgba(0, 0, 0, 0.26);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+  border-left: 1px solid rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26);
   text-align: center;
   display: inline-block;
