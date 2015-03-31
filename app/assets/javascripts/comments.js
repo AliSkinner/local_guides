@@ -14,12 +14,12 @@ $(document).ready(function(){
       dataType: "JSON"
     }).done(function(response){
       var comments = response.comments;
-
+      // debugger
       // append to comment section before slide-down
-
+      $("#place-comments").html("")
       $.each(comments, (function(index, comment){
         console.log(comment.body)
-        $("#place-comments").html("")
+        // $("#place-comments").html("")
         $("#place-comments").append('<table class="comment"><tr><td>' + comment.user.name + '</td><td>' + comment.updated_at + '</td></tr><tr><td>' + comment.body + '</td></tr></table>')
       }))
      $(".comment:even").css( "background-color", "#bbf" ); 

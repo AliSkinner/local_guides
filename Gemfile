@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'fog'
 gem 'geocoder'
 gem 'devise'
 gem 'carrierwave', '0.9.0'
