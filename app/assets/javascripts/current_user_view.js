@@ -1,5 +1,5 @@
-$(document).ready(function(){
+// $(document).ready(function(){
 
-  $("#current-user-view").hide()
+//   $("#current-user-view").hide()
 
-});
+// });
