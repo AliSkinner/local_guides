@@ -113,12 +113,13 @@ function initialize() {
       });
     });
 
-    $(".city-click").on('click', function(){
-      var city = $(this)
-      var lat = city.data("city-latitude")
-      var lng = city.data("city-longitude")
-      map.setCenter(new google.maps.LatLng(lat,lng))
-      map.setZoom(10)
+    
+    $("#city-profile-map").on('click', function(){
+      var lat = $(this).data("lat");
+      var lng = $(this).data("lng");
+      console.log(lng)
+      map.setCenter(new google.maps.LatLng(lat,lng));
+      map.setZoom(10);
     })
 
 }

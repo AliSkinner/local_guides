@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  background-color: rgb(246,246,246);
+  background-color: #EEEEDE;
 }
 
 .hidden {
@@ -10,7 +10,7 @@ html, body {
 }
 
 nav {
-  background-color: rgb(56,121,217);
+  background-color: #8F8996;
   height: 10%;
   font-size: 25px;
   span, #search, #login {
@@ -26,4 +26,8 @@ nav {
   display: inline-block;
   /*right:0;*/
   margin-left: 900px;
+}
+
+.map-icon {
+  height: 20px;
 }
