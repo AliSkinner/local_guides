@@ -1,6 +1,22 @@
 #city-profile {
-  // width:90%;
   background-color: #9D98A2;
   padding: 1%;
+  
+  #city-profile-picture {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
 
+}
+
+#city-profile-places {
+
+  img {
+    width:100px;
+  }
+
+  tr {
+    margin: 10px 0;
+  }
 }

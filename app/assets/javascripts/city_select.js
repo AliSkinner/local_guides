@@ -17,6 +17,7 @@ $(document).ready(function(){
   getCityNames();
 
   function renderCity(city){
+
     $.ajax({
       url: "/cities/" + city,
       type: "GET",
@@ -36,27 +37,28 @@ $(document).ready(function(){
           console.log(place)
           $("#city-profile-places").append('<tr class="place" data-place-id=' + place.id + '><td><img class="place-thumb" src=' + place.image.thumb.url + '></td><td>' + place.title + '</tr>');
         });
+
       });
+
+      $(".place").on('click', function(){
+        renderPlace($(this).data("place-id"))
+      });
+      
     });
 
     $("#city-profile").removeClass("hidden");
   };
 
+  var dropDown = $("#city-select");
+  dropDown.on('change', function(){
+    renderCity($(this).val());
+    $('html, body').animate({
+      scrollTop: $("#city-profile").offset().top},
+      'slow');
+  })
 
-  // function citySelect() {
-    var dropDown = $("#city-select");
-    dropDown.on('change', function(){
-
-      renderCity($(this).val());
-      $('html, body').animate({
-        scrollTop: $("#city-profile").offset().top},
-        'slow');
-
-    })
+  // function doIt() {
+  //   console.log("blah")
   // }
-
-
-
-  
 
 })
