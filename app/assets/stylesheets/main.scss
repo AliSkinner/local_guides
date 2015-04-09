@@ -1,27 +1,25 @@
-cohtml, body {
+html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  background-color: rgb(246,246,246);
+  background-color: #EEEEDE;
 }
 
 .hidden {
   display: none;
 }
 
-.partial {
-  margin:0 auto;
-  /*float:right;*/
-  height:inherit;
-  width: 80%;
-  display: inline-block;
-  position: absolute;
-}
-
 nav {
-  background-color: rgb(56,121,217);
+  background-color: #8F8996;
   height: 10%;
   font-size: 25px;
+  span, #search, #login {
+    display: inline-block;
+    margin: 0 auto;
+  }
+  a {
+    color: inherit;
+  }
 }
 
 #login {
@@ -29,6 +27,7 @@ nav {
   /*right:0;*/
   margin-left: 900px;
 }
+
 
 #city-nav{
   left:0;
@@ -38,34 +37,15 @@ nav {
   background-color: rgb(230,230,230)
 }
 
-#city-nav ul {
-  font-size: 16px;
+.map-icon {
+  height: 20px;
+}
+
+.scroll {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.bold {
   font-weight: bold;
-  padding: 0;
-  text-align: center;
-}
-
-
-#city-nav li:hover {
-  cursor: pointer;
-background-image:
-    radial-gradient(
-      rgb(200,200,200),
-      rgb(230,230,230)
-    );
-}
-
-.close-window {
-  border: 1px solid rgba(0, 0, 0, 0.26);
-  color: rgba(0, 0, 0, 0.26);
-  text-align: center;
-  display: inline-block;
-  width:20px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.below {
-  margin-top: 8%;
 }

@@ -1,29 +1,40 @@
-<div id="city-nav" class="col-md-2">
-  <%= render 'city_list' %>
+<div id="main-map-view" class="col-md-10"> 
+  <%= render 'main_map_view' %>
 </div>
 
-<div class="partial col-md-8 col-md-offset-1">
-
-  <div id="main-map-view" class="col-md-8"> 
-    <%= render 'main_map_view' %>
-  </div>
-
-
-  <div id="current-user-view" class="col-md-8 center-float"> 
-    <%= render 'current_user_profile' %>
-  </div>
-
-  <div id="place-profile" class="col-md-6 center-float clearfix"> 
-    <%= render 'place_profile' %>
-  </div>
-
-  <div id="city-view" class="col-md-8 below"> 
-    <%= render 'city_view' %>
-  </div>
-
-  <div id="user-profile" class="col-md-8 center-float"> 
-    <%= render 'user_profile' %>
-  </div>
-
+<div id="city-profile" class="hidden col-md-12">
+  <%= render 'city_profile'%>
 </div>
+
+<div id="place-profile" class="hidden col-md-12">
+  <%= render 'place_profile'%>
+</div>
+
+<div id="user-profile" class="hidden col-md-12">
+  <%= render 'user_profile' %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

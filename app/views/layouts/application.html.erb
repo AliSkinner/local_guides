@@ -9,26 +9,32 @@
 </head>
 <body>
   <nav>
-    <span id="map-view-reveal">HOME</span>
+    <span>LocalGuides</span>
+    <form id="search">
+      <select id="city-select">
+        <option>Cities</option>
+      </select>
+    </form>
 
-    <login id="login">
+     <login id="login">
       <% if current_user %>
-      <span id="current-user-id" class="hidden"><%= current_user.id %></span>
-      <span id="current-user-link"><%= current_user.name %></span>
-      |
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <span id="current-user-id" class="hidden"><%= current_user.id %></span>
+        <span id="current-user-link"><%= current_user.name %></span>
+        |
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <% else %>
-      <%= link_to "Sign In", new_user_session_path %>
-      <%= link_to "Register", new_user_registration_path %>
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Register", new_user_registration_path %>
       <% end %>
     </login>
   </nav>
+
+
+
   <!-- <p class="notice">< %= notice %></p>
   <p class="alert">< %= alert %></p> -->
 
-  <!-- <div id="city-nav" class="col-md-2">
-    < %= render 'city_list' %>
-  </div> -->
+  
 
   <%= yield %>
 
