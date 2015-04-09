@@ -54,7 +54,7 @@ $(document).ready(function(){
       
     });
     var sectionHeight = $(window).height() * 0.75;
-    $("#city-profile").css("height", sectionHeight);
+    $("#city-profile").css("max-height", sectionHeight);
     $("#city-profile").removeClass("hidden");
 
   };

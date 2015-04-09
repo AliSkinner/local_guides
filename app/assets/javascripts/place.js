@@ -16,7 +16,7 @@ function renderPlace(placeId) {
     $("#place-profile-id").val(place.id);
     $("#place-profile-picture").attr("src", place.image.main.url);
     var sectionHeight = $(window).height() * 0.75;
-    $("#place-profile").css("height", sectionHeight);
+    $("#place-profile").css("max-height", '500px');
 
     $("#place-profile").removeClass("hidden");
 
@@ -24,7 +24,7 @@ function renderPlace(placeId) {
       
       var user = getUser(comment.user_id);
 
-      $("#place-profile-comments").append('<div class="comment user col-md-10" data-user-id=' + user.id + '><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span>' + user.name + '</span></div></div>')
+      $("#place-profile-comments").append('<div class="comment user col-md-10" data-user-id=' + user.id + '><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span class="bold">' + user.name + '</span></div></div>')
 
     });
 
