@@ -24,14 +24,14 @@ function renderPlace(placeId) {
       
       var user = getUser(comment.user_id);
 
-      $("#place-profile-comments").append('<div class="comment user col-md-10"><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4" data-user-id=' + user.id + '><div class="col-md-8"><p>' + comment.body + '</p><span>' + user.name + '</span></div></div>')
+      $("#place-profile-comments").append('<div class="comment user col-md-10" data-user-id=' + user.id + '><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span>' + user.name + '</span></div></div>')
 
     });
 
     $('html, body').animate({ scrollTop: $("#place-profile").offset().top }, 'slow');
 
     $(".user").on('click', function(){
-      renderUser(9);
+      renderUser($(this).data("user-id"));
     });
 
   });
@@ -42,9 +42,6 @@ function renderPlace(placeId) {
     }
   });
 
-  // $(".user").on('click', function(){
-  //   renderUser(9);
-  // });
 
 };
 

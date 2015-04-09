@@ -1,4 +1,8 @@
 function renderUser(userId) {
 
-  console.log('renderUser')
+  var user = getUser(userId);
+  console.log(user);
+  debugger
+  
+
 };

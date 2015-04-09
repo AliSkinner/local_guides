@@ -49,7 +49,7 @@ $(document).ready(function(){
       });
 
       $(".user").on('click', function(){
-        renderUser(10);
+        renderUser($(this).data("user-id"));
       });
       
     });
