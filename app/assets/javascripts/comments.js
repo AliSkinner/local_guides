@@ -1,60 +1,23 @@
-// $(document).ready(function(){
+function createComment() {
 
-//   // hide comments on load
+  var comment = $("#new-comment").val();
+  var placeId = parseInt($("#place-profile-id").val());
+  var userId = parseInt($('#current-user-id').text());
 
-//   $("#comment-section").hide()
 
-//   // get the info for this place
+  $.ajax({
+    url: "/comments",
+    type: "POST",
+    dataType: 'json',
+    data: { comment : {"body" : comment, "user_id" : userId, "place_id" : placeId }}
+  }).done(function(comment){
+    console.log(comment);
+    var user = getUser(comment.user_id);
 
-//   $("#view-comments").on("click", function(){
-//     $("#place-comments").html("")
-//     $.ajax({
-//       url: "/places/" + parseInt($('#place-id').text()),
-//       type: "GET",
-//       dataType: "JSON"
-//     }).done(function(response){
-//       var comments = response.comments;
-//       // debugger
-//       // append to comment section before slide-down
-//       $("#place-comments").html("")
-//       $.each(comments, (function(index, comment){
-//         console.log(comment.body)
-//         // $("#place-comments").html("")
-//         $("#place-comments").append('<table class="comment"><tr><td>' + comment.user.name + '</td><td>' + comment.updated_at + '</td></tr><tr><td>' + comment.body + '</td></tr></table>')
-//       }))
-//      $(".comment:even").css( "background-color", "#bbf" ); 
-//     })
-//     $("#comment-section").slideToggle('slow')
-//   });
+    $("#place-profile-comments").append('<div class="comment col-md-10"><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span>' + user.name + '</span></div></div>');
+  });
+};
 
-//   // create comment
 
-//   $('#submit-comment').on('click', function(){
-//     var $comment = $('#new-comment-field').val();
-//     var $userId = parseInt($('#current-user-id').text());
-//     var $placeId = parseInt($("#infowindow-image").data("place-id"));
-
-//     $.ajax({
-//       url: "/comments",
-//       type: "POST",
-//       dataType: "JSON",
-//       data: { comment : {"body" : $comment, "user_id" : $userId, "place_id" : $placeId }}
-//     }).done(function(response){
-
-//       // clear field
-
-//       $('#new-comment-field').val("")
-//       console.log(response)
-//       var $body = response.body;
-//       var userName = $("#current-user-link").text()
-
-//       // append to commentst list
-
-//       $("#place-comments").append('<table class="comment"><tr><td>' + response.user.name + '</td><td>' + response.updated_at + '</td></tr><tr><td><img src=' + response.user.image.thumb.url + '></td><td>' + response.body + '</td></tr></table>');
-//     })
 
 //      $(".comment:even").css( "background-color", "#bbf" ); 
-
-//   });
-
-// });
