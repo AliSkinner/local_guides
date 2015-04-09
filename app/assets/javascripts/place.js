@@ -6,15 +6,17 @@ function renderPlace(placeId) {
     dataType: 'json',
   }).done(function(place){
     console.log(place)
-
+    $("#place-profile-comments").children().not('h4').empty();
     $("#place-profile-title").text(place.title);
     $("#place-profile-description").text(place.description);
+    $("#place-profile-poster").attr("data-user-id", place.user_id);
     $("#place-profile-poster").text(getUser(place.user_id).name);
     $("#place-profile-map").attr("data-lat", place.lat);
     $("#place-profile-map").attr("data-lng", place.lng);
     $("#place-profile-id").val(place.id);
     $("#place-profile-picture").attr("src", place.image.main.url);
-    $("#place-profile").css("height", ($(window).height() / 0.75));
+    var sectionHeight = $(window).height() * 0.75;
+    $("#place-profile").css("height", sectionHeight);
 
     $("#place-profile").removeClass("hidden");
 
@@ -22,17 +24,27 @@ function renderPlace(placeId) {
       
       var user = getUser(comment.user_id);
 
-      $("#place-profile-comments").append('<div class="comment col-md-10"><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span>' + user.name + '</span></div></div>')
+      $("#place-profile-comments").append('<div class="comment user col-md-10"><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4" data-user-id=' + user.id + '><div class="col-md-8"><p>' + comment.body + '</p><span>' + user.name + '</span></div></div>')
 
-    })
+    });
 
     $('html, body').animate({ scrollTop: $("#place-profile").offset().top }, 'slow');
+
+    $(".user").on('click', function(){
+      renderUser(9);
+    });
 
   });
 
   $("#create-new-comment").on('click', function(){
-    createComment()
+    if ($("#new-comment").val()) {
+      createComment()
+    }
   });
+
+  // $(".user").on('click', function(){
+  //   renderUser(9);
+  // });
 
 };
 

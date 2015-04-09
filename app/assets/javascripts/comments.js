@@ -12,10 +12,13 @@ function createComment() {
     data: { comment : {"body" : comment, "user_id" : userId, "place_id" : placeId }}
   }).done(function(comment){
     console.log(comment);
-    var user = getUser(comment.user_id);
 
-    $("#place-profile-comments").append('<div class="comment col-md-10"><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span>' + user.name + '</span></div></div>');
+    $("#new-comment").val("");
+
+    var user = getUser(comment.user_id);
+    $("#place-profile-comments").append('<div class="comment user col-md-10"><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span>' + user.name + '</span></div></div>');
   });
+
 };
 
 

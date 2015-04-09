@@ -14,6 +14,7 @@ $(document).ready(function(){
       });
     });
   };
+
   getCityNames();
 
   function renderCity(city){
@@ -40,25 +41,31 @@ $(document).ready(function(){
 
       });
 
+      var defaultPlace = $("#city-profile-places").children().children().first().data("place-id");
+      renderPlace(defaultPlace);
+
       $(".place").on('click', function(){
         renderPlace($(this).data("place-id"))
       });
+
+      $(".user").on('click', function(){
+        renderUser(10);
+      });
       
     });
-
+    var sectionHeight = $(window).height() * 0.75;
+    $("#city-profile").css("height", sectionHeight);
     $("#city-profile").removeClass("hidden");
+
   };
 
   var dropDown = $("#city-select");
   dropDown.on('change', function(){
     renderCity($(this).val());
     $('html, body').animate({
-      scrollTop: $("#city-profile").offset().top},
-      'slow');
-  })
+      scrollTop: $("#city-profile").offset().top}, 'slow');
+    })
 
-  // function doIt() {
-  //   console.log("blah")
-  // }
+
 
 })
