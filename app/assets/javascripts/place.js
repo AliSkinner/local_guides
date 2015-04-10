@@ -16,7 +16,9 @@ function renderPlace(placeId) {
     $("#place-profile-id").val(place.id);
     $("#place-profile-picture").attr("src", place.image.main.url);
     var sectionHeight = $(window).height() * 0.75;
-    $("#place-profile").css("max-height", '500px');
+    $("#place-profile").css("height", sectionHeight );
+    // $("#place-profile-comments").css("height", '500px');
+
 
     $("#place-profile").removeClass("hidden");
 
