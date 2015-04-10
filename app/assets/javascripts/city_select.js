@@ -27,12 +27,12 @@ $(document).ready(function(){
 
       $("#city-profile-users").empty();
       $("#city-profile-places").empty();
-      $("#city-profile-name").text(response.name);
+      $(".city-profile-name").text(response.name);
       $("#city-profile-map").attr("data-lat", response.latitude);
       $("#city-profile-map").attr("data-lng", response.longitude);
 
       $.each(response.users, function(index, user){
-        $("#city-profile-users").append('<tr class="user" data-user-id=' + user.id + '><td><img class="user-thumb" src=' + user.image.thumb.url + '></td><td>' + user.name + '</tr>');
+        $("#city-profile-users").append('<tr class="user" data-user-id=' + user.id + '><td><img class="user-thumb" src=' + user.image.profile.url + '></td><td>' + user.name + '</tr>');
 
         $.each(user.places, function(index, place){
           console.log(place)
@@ -41,8 +41,8 @@ $(document).ready(function(){
 
       });
 
-      var defaultPlace = $("#city-profile-places").children().children().first().data("place-id");
-      renderPlace(defaultPlace);
+      // var defaultPlace = $("#city-profile-places").children().children().first().data("place-id");
+      // renderPlace(defaultPlace);
 
       $(".place").on('click', function(){
         renderPlace($(this).data("place-id"))
@@ -53,8 +53,8 @@ $(document).ready(function(){
       });
       
     });
-    var sectionHeight = $(window).height() * 0.75;
-    $("#city-profile").css("max-height", sectionHeight);
+    var sectionHeight = $(window).height() * 0.65;
+    $("#city-profile").css("height", sectionHeight);
     $("#city-profile").removeClass("hidden");
 
   };

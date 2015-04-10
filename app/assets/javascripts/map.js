@@ -113,10 +113,11 @@ function initialize() {
 
     function setMap(lat, lng, place) {
       map.setCenter(new google.maps.LatLng(lat,lng));
-      if (place = "place") {
+      // debugger
+      if (typeof place != "undefined") {
         map.setZoom(17);
       } else {
-        map.setZoom(10);
+        map.setZoom(12);
       }
       $('html, body').animate({
         scrollTop: $("#main-map-view").offset().top},
@@ -132,7 +133,7 @@ function initialize() {
     $("#place-profile-map").on('click', function(){
       var lat = $(this).data("lat");
       var lng = $(this).data("lng");
-      setMap(lat, lng, "place")
+      setMap(lat, lng, "placeview")
     })
 }
 
