@@ -6,7 +6,7 @@ function renderPlace(placeId) {
     dataType: 'json',
   }).done(function(place){
     console.log(place)
-    $("#place-profile-comments").children().not('h4').empty();
+    $('#place-profile-comments').children().not('h4').remove();
     $("#place-profile-title").text(place.title);
     $("#place-profile-description").text(place.description);
     $("#place-profile-poster").attr("data-user-id", place.user_id);
