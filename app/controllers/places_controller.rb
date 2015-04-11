@@ -42,27 +42,18 @@ class PlacesController < ApplicationController
 
   end
 
-
+  
   def create
-    @place = Place.create(place_params)
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @place }
-      format.js
+    # binding.pry
+    if Place.place_near_user_city?(current_user, params[:place][:lat],params[:place][:lng])
+
+      @place = Place.create(place_params)
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @place }
+        format.js
+      end
     end
-
-    # respond_to do |format|
-    #   if @place.save
-    #     format.html { redirect_to @place, notice: 'Place was successfully created.' }
-    #     format.json { render json: @place}
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @place.errors, status: :unprocessable_entity }
-    #   end
-    # redirect_to action: :index
-
-    # end
-
   end
 
 

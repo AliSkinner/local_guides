@@ -12,7 +12,16 @@
 }
 
 #new-form {
+  height:15%;
   display:none;
+  margin-left: 62px;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #E0F7FA;
+  padding: 1%;
+  border-radius: 5px;
+  width:90%;
+
 }
 
 #reveal-place-form {
@@ -21,11 +30,33 @@
 
 #new-image {
   display:inline-block;
+  margin-left: 62px;
+  margin-top: 10px;
+}
+
+#new-image {
+  display: inline-block;
+  /*margin-left: 20px;*/
+}
+
+#new-title {
+  margin-right: 20px;
 }
 
 #new-description {
   display: inline-block;
   margin-left: auto;
+  position: absolute;
+  right: 40%;
 }
 
+.place-form-section{
+  height:100%;
+}
+
+#submit-place-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 

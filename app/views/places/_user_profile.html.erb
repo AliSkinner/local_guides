@@ -1,21 +1,41 @@
-<div id="user-profile-details" class="col-md-4">
-  <h3 id="user-profile-name"></h3>
-  <h4 id="user-profile-city"></h4>
+<div id="user-profile-details" class="col-md-3">
+  <h1 class="user-profile-name"></h1>
+  <h3 id="user-profile-city"></h3>
+  <span class="hidden" id="user-profile-user-id"></span>
 
   <div id="user-profile-activity">
     <div id="user-profile-activity-light"></div>
     <span id="user-profile-activity-status"></span>
   </div>
-
-  <h4 id="user-profile-message">Message Me</h4>
+<br>
+<br>
+  <h5 id="user-profile-message">Message Me</h5>
+  <h5 id="user-profile-rate">Rate Me</h5>
+  <h5 id="user-profile-myplaces">My Places</h5>
+  <div id="review-box">
+    <textarea id="new-review" cols="30" rows="5" placeholder="Have you met this person? What did you this person's postings? Leave a rating..."></textarea>
+    <button id="create-new-review">Post Rating</button>
+  </div>
 
 </div>
 
-<div id="user-profile-pic" class="col-md-4">
+<div id="user-profile-pic" class="col-md-3">
   <img src="" id="user-profile-picture" >
 </div>
 
-<div id="user-profile-other" class="col-md-4 scroll">
-  <div id="user-profile-reviews" class="col-md-12"></div>
-  <div id="user-profile-chat" class="col-md-12 hidden"></div>
+<div id="user-profile-other" class="col-md-6 scroll">
+
+  <div id="user-profile-reviews" class="col-md-12 scroll">
+    <h4><span class="user-profile-name"></span>'s ratings </h4>
+  </div>
+
+  <div id="user-profile-places" class="col-md-12 scroll">
+    <h4>Places posted by <span class="user-profile-name"></span></h4>
+  
+    <table id="user-profile-places-table"></table>
+  </div>
+
+  <div id="user-profile-chat" class="col-md-12 scroll">
+    <h3>Feature coming soon...</h3>
+  </div>
 </div>
