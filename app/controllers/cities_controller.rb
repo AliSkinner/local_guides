@@ -14,7 +14,6 @@ class CitiesController < ApplicationController
   end
 
   def create
-    binding.pry
     @city = City.create(city_params)
     respond_to do |format|
       format.json { render json: @city }

@@ -1,3 +1,25 @@
+<nav>
+  <span id="logo">LocalGuides</span>
+  
+  <form id="search">
+    <select id="city-select">
+      <option>Cities</option>
+    </select>
+  </form>
+
+   <login id="login" >
+    <% if current_user %>
+      <span id="current-user-id" class="hidden"><%= current_user.id %></span>
+      <span id="current-user-link" class="user" data-user-id=<%= current_user.id %>><%= current_user.name %></span>
+      |
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path %>
+      <%= link_to "Register", new_user_registration_path %>
+    <% end %>
+  </login>
+</nav>
+
 <div id="main-map-view" class="col-md-10"> 
   <%= render 'main_map_view' %>
 </div>

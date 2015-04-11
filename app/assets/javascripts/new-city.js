@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-  $(".new-city-form").hide();
-
   $("#new-city").on('click', function(){
+
+    $(".new-city-form").removeClass('hidden');
 
     $(".new-city-form").fadeIn('slow');
 
@@ -23,6 +23,9 @@ $(document).ready(function(){
 
         // ('<option value=' + response.id + '>' + response.name + '</option>')
       });
+      $(".new-city-form").hide();
+    });
+    $("#cancel-button").on('click', function(){
       $(".new-city-form").hide();
     });
   });
