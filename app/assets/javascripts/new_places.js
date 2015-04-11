@@ -16,7 +16,7 @@ $(document).ready(function(){
         // });
 
     if ($("#new-title").val().length > 0 && $("#new-lat").val().length > 0 && $("#new-long").val().length > 0){
-      $.ajax({
+      var createPlace = $.ajax({
         url: "/places",
         type: "POST",
         dataType: "JSON",
@@ -38,6 +38,9 @@ $(document).ready(function(){
     else {
           $("#new-form").prepend("<p>Make sure fields are valid</p>")
     }
+    createPlace.fail(function(){
+      alert("bum")
+    });
   })
 })
 

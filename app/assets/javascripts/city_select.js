@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+  function blah(){
+    alert("hi")
+  }
+
   $("#main-map-view").css("height", $(window).height());
 
   function getCityNames() {
