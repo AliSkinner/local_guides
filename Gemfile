@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
+ruby '2.1.4'
 
+gem 'rails_12factor'
 gem 'fog'
 gem 'geocoder'
 gem 'devise'
