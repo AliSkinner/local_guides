@@ -10,15 +10,15 @@
 <body>
   <nav>
     <span id="logo">LocalGuides</span>
+    <% if current_user %>
     <form id="search">
       <select id="city-select">
         <option>Cities</option>
       </select>
-      <a href="#" onclick="return false" id="new-city">Where's my City?</a>
     </form>
 
      <login id="login" >
-      <% if current_user %>
+      
         <span id="current-user-id" class="hidden"><%= current_user.id %></span>
         <span id="current-user-link" class="user" data-user-id=<%= current_user.id %>><%= current_user.name %></span>
         |

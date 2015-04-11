@@ -14,8 +14,11 @@ class CitiesController < ApplicationController
   end
 
   def create
+    binding.pry
     @city = City.create(city_params)
-    redirect_to root_path
+    respond_to do |format|
+      format.json { render json: @city }
+    end
   end
 
   def show
