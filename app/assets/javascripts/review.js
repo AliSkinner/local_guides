@@ -16,11 +16,17 @@ function createReview() {
     $("#new-review").val("");
 
     var reviewer = getUser(review.reviewer_id)
+    var reviewContent = '<div class="review user col-md-10" data-user-id=' + reviewer.id + '><img src=' + reviewer.image.profile.url + ' class="review-user-pic col-md-3"><div class="col-md-9"><p>' + review.body + '</p><span class="bold">' + reviewer.name + '</span></div></div>'
 
-    $("#user-profile-reviews").children().first().next().prepend('<div class="review user col-md-10" data-user-id=' + reviewer.id + '><img src=' + reviewer.image.profile.url + ' class="review-user-pic col-md-4"><div class="col-md-8"><p>' + review.body + '</p><span class="bold">' + reviewer.name + '</span></div></div>');
+    if ($("#user-profile-reviews").children().size() > 1){
+      $("#user-profile-reviews").children().first().next().prepend(reviewContent);
+    } else {
+      $("#user-profile-reviews").append(reviewContent);
+    };
   });
 
 };
+
 
 
 

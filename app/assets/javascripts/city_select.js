@@ -1,9 +1,5 @@
 $(document).ready(function(){
 
-  function blah(){
-    alert("hi")
-  }
-
   $("#main-map-view").css("height", $(window).height());
 
   function getCityNames() {
@@ -70,6 +66,24 @@ $(document).ready(function(){
       scrollTop: $("#city-profile").offset().top}, 'slow');
     })
 
+  // initializing click promp event listeners
 
+  $("#create-new-review").on('click', function(){
+    createReview();
+    console.log('click')
+  });
+
+  $("#user-profile-myplaces").on('click', function(){
+    showPlaces();
+  });
+
+  $("#user-profile-rate").on('click', function(){
+    showReviews();
+  });
+
+  $("#user-profile-message").on('click', function(){
+    showChat();
+    console.log('upm-click')
+  });
 
 })

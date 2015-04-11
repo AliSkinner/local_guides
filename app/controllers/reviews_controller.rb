@@ -18,6 +18,8 @@ class ReviewsController < ApplicationController
       format.json { render json: @review, include: :user }
       format.js
     end
+    user = User.find(@review.subject_id)
+    user.reviews << @review
   end
 
 

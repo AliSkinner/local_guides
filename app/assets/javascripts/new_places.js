@@ -39,7 +39,7 @@ $(document).ready(function(){
           $("#new-form").prepend("<p>Make sure fields are valid</p>")
     }
     createPlace.fail(function(){
-      alert("bum")
+      alert("It looks like you're trying to create a place that's more than 50 miles away from your home town. How about trying something a little more local?")
     });
   })
 })
