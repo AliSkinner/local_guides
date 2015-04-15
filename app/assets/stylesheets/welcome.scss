@@ -1,0 +1,30 @@
+#welcome {
+height: 100% ;
+width: 100%;
+  background: url('https://s3-eu-west-1.amazonaws.com/local-guides/uploads/other/welcome.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    postion: relative;
+  
+}
+
+
+#login {
+  color: white;
+  display: inline-block;
+  width: 30%;
+  background-color: black;
+  opacity:0.9c;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left:33%;
+}
+
+#login-button {
+  color: black;
+}

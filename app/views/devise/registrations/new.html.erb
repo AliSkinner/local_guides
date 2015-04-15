@@ -3,17 +3,6 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-    <div class="field">
-      <%= f.collection_select(:city_id, @cities, :id, :name, {:include_blank => "Choose Your City"}, {:class=>'user-city'} ) %>
-      <a href="#" onclick="return false" id="new-city">Hey! Where's my City?</a>
-    </div>
-
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -32,20 +21,9 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-    <%= f.label :image %><br />
-    <%= f.file_field :image %>
-  </div>
-
-  
-
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
-
-<div class="new-city-form col-md-8 hidden">
-  <%= render "new_city" %>
-</div>
