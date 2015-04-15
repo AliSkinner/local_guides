@@ -61,6 +61,8 @@ $(document).ready(function(){
 
   var dropDown = $("#city-select");
   dropDown.on('change', function(){
+    $("#place-profile").addClass("hidden");
+
     renderCity($(this).val());
     $('html, body').animate({
       scrollTop: $("#city-profile").offset().top}, 'slow');

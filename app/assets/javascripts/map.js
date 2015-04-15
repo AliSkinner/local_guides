@@ -131,7 +131,6 @@ function initialize() {
     })
 
     $("#place-profile-map").on('click', function(){
-      // debugger
       var lat = $("#place-profile-map").attr("data-lat");
       var lng = $("#place-profile-map").attr("data-lng");
       setMap(lat, lng, "placeview")
