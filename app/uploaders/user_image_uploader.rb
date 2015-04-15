@@ -25,19 +25,19 @@ class UserImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
+  process :scale => [400, 400]
   #
-  # def scale(width, height)
-  #   # do something
-  # end
+  def scale(width, height)
+    # do something
+  end
 
   # Create different versions of your uploaded files:
   version :profile do
-    process :resize_to_fit => [350, 350]
+    process :resize_to_fit => [400, 400]
   end
 
   version :thumb do
-    process :resize_to_fit => [100, 100]
+    process :resize_to_fit => [200, 200]
   end
 
 

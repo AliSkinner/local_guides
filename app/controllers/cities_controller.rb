@@ -34,7 +34,7 @@ end
 
   private 
   def city_params
-    params.require(:city).permit(:name, :lat, :lng)
+    params.require(:city).permit(:name, :lat, :lng, :image)
   end
 
 end
