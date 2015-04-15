@@ -12,11 +12,13 @@ $(document).ready(function(){
 
     $("#create-new-city").on('click', function(){
       var city = $('#new-city-input').val();
+      var cityImage = $('#new-city-image').val();
+
       $.ajax({
         url: "/cities",
         type: 'POST',
         dataType: 'json',
-        data: { city : {name : city}}
+        data: { city : {name : city, image : cityImage}}
       }).done(function(response){
         $("#user_city_id").children().first().val(response.id)
         $("#user_city_id").children().first().text(response.name)

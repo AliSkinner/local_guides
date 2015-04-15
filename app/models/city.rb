@@ -7,4 +7,6 @@ class City < ActiveRecord::Base
   geocoded_by :name
   after_validation :geocode
 
+  mount_uploader :image, CityImageUploaderUploader
+
 end
