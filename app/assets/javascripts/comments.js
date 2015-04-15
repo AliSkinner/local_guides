@@ -16,7 +16,14 @@ function createComment() {
     $("#new-comment").val("");
 
     var user = getUser(comment.user_id);
-    $("#place-profile-comments").children().first().next().prepend('<div class="comment user col-md-10" data-user-id=' + user.id + '><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span class="bold">' + user.name + '</span></div></div>');
+
+    var commentContent = '<div class="comment user col-md-10" data-user-id=' + user.id + '><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span class="bold">' + user.name + '</span></div></div>'
+
+    if ($("#place-profile-comments").children().size() > 1){
+      $("#place-profile-comments").children().first().next().prepend(commentContent);
+    } else {
+      $("#place-profile-comments").append(commentContent);
+    };
   });
 
 };

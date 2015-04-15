@@ -86,4 +86,10 @@ $(document).ready(function(){
     console.log('upm-click')
   });
 
+  $("#create-new-comment").on('click', function(){
+    if ($("#new-comment").val()) {
+      createComment()
+    }
+  });
+
 })

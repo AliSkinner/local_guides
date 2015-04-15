@@ -38,11 +38,11 @@ function renderPlace(placeId) {
 
   });
 
-  $("#create-new-comment").on('click', function(){
-    if ($("#new-comment").val()) {
-      createComment()
-    }
-  });
+  // $("#create-new-comment").on('click', function(){
+  //   if ($("#new-comment").val()) {
+  //     createComment()
+  //   }
+  // });
 
 
 };
