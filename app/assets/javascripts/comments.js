@@ -1,7 +1,7 @@
 function createComment() {
 
   var comment = $("#new-comment").val();
-  var placeId = parseInt($("#place-profile-id").val());
+  var placeId = parseInt($("#place-profile-id").text());
   var userId = parseInt($('#current-user-id').text());
 
 
