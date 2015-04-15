@@ -61,6 +61,8 @@ $(document).ready(function(){
 
   var dropDown = $("#city-select");
   dropDown.on('change', function(){
+    $("#place-profile").addClass("hidden");
+
     renderCity($(this).val());
     $('html, body').animate({
       scrollTop: $("#city-profile").offset().top}, 'slow');
@@ -84,6 +86,12 @@ $(document).ready(function(){
   $("#user-profile-message").on('click', function(){
     showChat();
     console.log('upm-click')
+  });
+
+  $("#create-new-comment").on('click', function(){
+    if ($("#new-comment").val()) {
+      createComment()
+    }
   });
 
 })

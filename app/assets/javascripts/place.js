@@ -6,6 +6,9 @@ function renderPlace(placeId) {
     dataType: 'json',
   }).done(function(place){
     console.log(place)
+    $("#place-profile-map").removeAttr("data-lat");
+    $("#place-profile-map").removeAttr("data-lng");
+
     $('#place-profile-comments').children().not('h3').remove();
     $("#place-profile-title").text(place.title);
     $("#place-profile-description").text(place.description);
@@ -13,7 +16,7 @@ function renderPlace(placeId) {
     $("#place-profile-poster").text(getUser(place.user_id).name);
     $("#place-profile-map").attr("data-lat", place.lat);
     $("#place-profile-map").attr("data-lng", place.lng);
-    $("#place-profile-id").val(place.id);
+    $("#place-profile-id").text(place.id);
     $("#place-profile-picture").attr("src", place.image.main.url);
     var sectionHeight = $(window).height() * 0.65;
     $("#place-profile").css("height", sectionHeight );
@@ -38,11 +41,11 @@ function renderPlace(placeId) {
 
   });
 
-  $("#create-new-comment").on('click', function(){
-    if ($("#new-comment").val()) {
-      createComment()
-    }
-  });
+  // $("#create-new-comment").on('click', function(){
+  //   if ($("#new-comment").val()) {
+  //     createComment()
+  //   }
+  // });
 
 
 };
