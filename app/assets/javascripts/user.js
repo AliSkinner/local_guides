@@ -15,7 +15,7 @@ function renderUser(userId) {
   var user = getUser(userId);
   $(".user-profile-name").text(user.name);
   $("#user-profile-city").text(getCity(user.city_id).name);
-  $("#user-profile-user-id").attr("data-user-id", user.id);
+  $("#user-profile-user-id").text(user.id);
   $("#user-profile-picture").attr("src", user.image.profile.url);
   $("#user-profile-picture").css("max-height", $("#user-profile-picture").parent().parent().height());
 
