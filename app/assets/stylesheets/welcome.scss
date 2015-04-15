@@ -11,7 +11,7 @@ width: 100%;
 }
 
 
-#login {
+#login-form {
   color: white;
   display: inline-block;
   width: 30%;
@@ -25,6 +25,6 @@ width: 100%;
   left:33%;
 }
 
-#login-button {
+#login-button, #user_password, #user_email {
   color: black;
 }
