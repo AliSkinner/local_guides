@@ -71,6 +71,10 @@ $(document).ready(function(){
 
   // initializing click promp event listeners
 
+  $(".user").on('click', function(){
+    renderUser($(this).data("user-id"));
+  });
+
   $("#create-new-review").on('click', function(){
     createReview();
     console.log('click')

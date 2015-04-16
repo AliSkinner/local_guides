@@ -32,14 +32,22 @@ function renderUser(userId) {
   $('html, body').animate({
     scrollTop: $("#user-profile").offset().top}, 'slow');
 
-  $.each(user.places, function(index, place){
-    $("#user-profile-places-table").append('<tr class="place" data-place-id=' + place.id + '><td><img class="place-thumb" src=' + place.image.thumb.url + '></td><td>' + place.title + '</tr>');
-  });
+  if (user.places.length < 1) {
+    $("#user-profile-places-table").append("<div class='faded'><h4>" + user.name.match(/\w+/)[0] + " hasn't posted anywhere yet</h4></div>");
+  } else {
+
+    $.each(user.places, function(index, place){
+      $("#user-profile-places-table").append('<tr class="place" data-place-id=' + place.id + '><td><img class="place-thumb" src=' + place.image.thumb.url + '></td><td>' + place.title + '</tr>');
+    });
+  }
   
   $(".user").on('click', function(){
     renderUser($(this).data("user-id"));
   });
 
+  $(".place").on('click', function(){
+   renderPlace($(this).data("place-id"))
+ });
 };
 
 
