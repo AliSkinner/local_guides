@@ -1,28 +1,14 @@
-== README
+This was my final project for General Assembly's WDI course.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The idea is for it to be a platform for backpackers and holiday-makers to look-up interesting places in the cities that they're about to visit.
+People can sign up, add their home town, if it's not listed already, and then search for the city they're going to; either directly on the embedded google map, or by the dropdown menu.
 
-Things you may want to cover:
+It is a single-page app, with Ruby-on-Rails serving the back-end, and the front-end using a lot of jQuery/AJAX, as well as vanilla Javascript for the GoogleMaps API stuff.
 
-* Ruby version
+If you want to post and new place, then you click the button and a pin is dropped in the center of the map. oce you have dragged this to the appropriat espot on the map and filled in the required fields, a place is created.
+Users are not able to create a place that is located more than 50 miles from their hometown. This is because it is 'a local app for local people'....so to speak. This is achieved by referencing the new place coordinates against those of the new place.
 
-* System dependencies
+On the city and place profiles, if the map icon is clicked on, the page slides up and resets the map's center and zoom.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Users can comment on places, to say whether or not they enjoyed their visit.
+Users can also be reviewed, based on the qulity of their posts and their helpfulness.
