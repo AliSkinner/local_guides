@@ -2,6 +2,7 @@
   background-color: #EEEEEE;
   // color: white;
   padding-right:0;
+  // padding-bottom: 2em;
 }
 
 // #user-profile-pic, #user-profile-picture {
@@ -39,18 +40,19 @@
 }
 
 .review {
-  margin-bottom: 2.5em;
   background-color: #EEEEEE;
   border-radius: 20px;
   padding: 5px;
   margin: 5px;
+  margin-bottom: 2em;
   box-shadow: 0 0 5px 10px #EEEEEE;
+}
+
+.review:even {
+  background-color: #EEEEFF;
 }
 
 #user-profile-places-table td {
   padding: 15px;
 }
 
-#review-box {
-  color: black;
-}
