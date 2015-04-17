@@ -1,6 +1,6 @@
 #user-profile {
-  background-color: #006064;
-  color: white;
+  background-color: #EEEEEE;
+  // color: white;
   padding-right:0;
 }
 
@@ -17,12 +17,16 @@
 
 #user-profile-reviews {
   padding: 10px;
+  h4 {
+    margin-bottom:2em;
+  }
 }
 
 #user-profile-reviews, #user-profile-places, #user-profile-chat {
-  background-color: #00838F;
+  background-color: #737594;
   padding: 15px;
-
+  // color: white;
+  
 }
 
 #user-profile-other {
@@ -31,13 +35,16 @@
 
 #user-profile-details {
   height: 100%;
+  color:auto;
 }
 
 .review {
-  background-color: #00ACC1;
+  margin-bottom: 2.5em;
+  background-color: #EEEEEE;
   border-radius: 20px;
   padding: 5px;
   margin: 5px;
+  box-shadow: 0 0 5px 10px #EEEEEE;
 }
 
 #user-profile-places-table td {

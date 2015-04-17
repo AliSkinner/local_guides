@@ -1,5 +1,5 @@
-<nav>
-  <span id="logo">LocalGuides</span>
+<nav class="navbar navbar-default">
+  <span id="logo" class="navbar-brand">LocalGuides</span>
   
   <form id="search">
     <select id="city-select">
@@ -7,7 +7,7 @@
     </select>
   </form>
 
-   <login id="login" >
+  <login id="login" >
     <% if current_user %>
       <span id="current-user-id" class="hidden"><%= current_user.id %></span>
       <span id="current-user-link" class="user" data-user-id=<%= current_user.id %>><%= current_user.name %></span>
@@ -35,8 +35,6 @@
 <div id="user-profile" class="hidden col-md-12">
   <%= render 'user_profile' %>
 </div>
-
-
 
 
 

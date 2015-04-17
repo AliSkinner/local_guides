@@ -2,7 +2,11 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  // background-color: #EEEEDE;
+  position:relative;
+}
+
+body {
+  margin-bottom: 60px;
 }
 
 .hidden {
@@ -11,14 +15,14 @@ html, body {
 
 nav {
   background-color: #00BCD4;
-  height: 7%;
+  // height: 7%;
   font-size: 25px;
-  span, #search, #login {
-    display: inline-block;
-    margin: 0 auto;
-  }
+  // span, #search, #login {
+  //   display: inline-block;
+  //   margin: 0 auto;
+  // }
   a {
-    color: inherit;
+    // color: inherit;
   }
 }
 
@@ -78,3 +82,4 @@ nav {
 .faded {
   color: #AFB6B7;
 }
+
