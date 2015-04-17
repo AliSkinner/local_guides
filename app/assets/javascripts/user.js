@@ -32,7 +32,7 @@ function renderUser(userId) {
       $("#user-profile-reviews").append('<div class="review user link col-md-10" data-user-id=' + review.reviewer_id + '><img src=' + reviewer.image.profile.url + ' class="review-user-pic col-md-3"><div class="col-md-9"><p>' + review.body + '</p><span class="bold">' + reviewer.name + '</span></div></div>')
     });
 
-    $(".comment:even").css( "background-color", "#006064" ); 
+    // $(".comment:even").css( "background-color", "#006064" ); 
 
   };
 

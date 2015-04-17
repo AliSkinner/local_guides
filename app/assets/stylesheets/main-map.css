@@ -11,6 +11,10 @@
   margin-top: 3%; 
 }
 
+.gm-style-iw {
+  padding:1em;
+}
+
 #new-form {
   height:16%;
   display:none;
@@ -18,7 +22,7 @@
   margin:0 auto;
   font-weight: bold;
   margin-top: 10px;
-  background-color: #C4D3B0;
+  background-color: #E3E3E3;
   padding: 1%;
   border-radius: 5px;
   width:70%;
@@ -41,7 +45,8 @@
   display: inline-block;
   margin-left: auto;
   position: absolute;
-  /*right: 40%;*/
+  font-size:12px;
+  font-weight: normal;
 }
 
 .place-form-section{
