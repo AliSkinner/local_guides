@@ -29,7 +29,7 @@ function renderUser(userId) {
     
       var reviewer = getUser(review.reviewer_id);
 
-      $("#user-profile-reviews").append('<div class="review user col-md-10" data-user-id=' + review.reviewer_id + '><img src=' + reviewer.image.profile.url + ' class="review-user-pic col-md-3"><div class="col-md-9"><p>' + review.body + '</p><span class="bold">' + reviewer.name + '</span></div></div>')
+      $("#user-profile-reviews").append('<div class="review user link col-md-10" data-user-id=' + review.reviewer_id + '><img src=' + reviewer.image.profile.url + ' class="review-user-pic col-md-3"><div class="col-md-9"><p>' + review.body + '</p><span class="bold">' + reviewer.name + '</span></div></div>')
     });
 
     $(".comment:even").css( "background-color", "#006064" ); 
@@ -45,7 +45,7 @@ function renderUser(userId) {
   } else {
 
     $.each(user.places, function(index, place){
-      $("#user-profile-places-table").append('<tr class="place" data-place-id=' + place.id + '><td><img class="place-thumb" src=' + place.image.thumb.url + '></td><td>' + place.title + '</tr>');
+      $("#user-profile-places-table").append('<tr class="place link" data-place-id=' + place.id + '><td><img class="place-thumb" src=' + place.image.thumb.url + '></td><td>' + place.title + '</tr>');
     });
   }
   

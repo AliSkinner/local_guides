@@ -33,11 +33,11 @@ $(document).ready(function(){
       $("#city-profile-picture").attr('src', response.image.url)
 
       $.each(response.users, function(index, user){
-        $("#city-profile-users").append('<tr class="user" data-user-id=' + user.id + '><td><img class="user-thumb" src=' + user.image.profile.url + '></td><td>' + user.name + '</tr>');
+        $("#city-profile-users").append('<tr class="user link" data-user-id=' + user.id + '><td><img class="user-thumb" src=' + user.image.profile.url + '></td><td>' + user.name + '</tr>');
 
         $.each(user.places, function(index, place){
           console.log(place)
-          $("#city-profile-places").append('<tr class="place" data-place-id=' + place.id + '><td><img class="place-thumb" src=' + place.image.thumb.url + '></td><td>' + place.title + '</tr>');
+          $("#city-profile-places").append('<tr class="place link" data-place-id=' + place.id + '><td><img class="place-thumb" src=' + place.image.thumb.url + '></td><td>' + place.title + '</tr>');
         });
 
       });
