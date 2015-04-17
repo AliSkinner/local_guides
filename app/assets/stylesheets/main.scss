@@ -2,7 +2,11 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  // background-color: #EEEEDE;
+  position:relative;
+}
+
+body {
+  margin-bottom: 60px;
 }
 
 .hidden {
@@ -63,3 +67,4 @@ nav {
   font-size: 12px;
   color: #666666;
 }
+

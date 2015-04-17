@@ -114,9 +114,8 @@ function getWeather(lat, lng){
     console.log(response.current_observation.temp_c, response.current_observation.icon_url);
     var temp = response.current_observation.temp_c;
     var icon = response.current_observation.icon_url;
-    // $("#temp").prepend(temp);
-    // $("#weather-icon").attr('src', icon);
-    $("#weather").append('<h5>Weather now: <span id="temp">' + temp + '&degC</span> <img id="weather-icon" src=' + icon + ' alt="weather icon"></h5>')
+    $("#weather").empty();
+    $("#weather").append('<h5>Weather now: <span id="temp">' + temp + '&degC</span> <img id="weather-icon" src=' + icon + ' alt="weather icon"></h5>');
   });
 };
 
