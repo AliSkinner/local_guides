@@ -1,7 +1,13 @@
 class RegistrationsController < Devise::RegistrationsController
 
+
+
   def new
     @user = User.new
+    if @user.save
+      puts 'hahaaihsd.ksjfhdwlkjfhw.dkjfhdwlkjfhasdkfjhdwaf'
+    end
+
     @cities = City.all
   end
 
