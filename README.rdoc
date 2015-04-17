@@ -9,6 +9,7 @@ If you want to post and new place, then you click the button and a pin is droppe
 Users are not able to create a place that is located more than 50 miles from their hometown. This is because it is 'a local app for local people'....so to speak. This is achieved by referencing the new place coordinates against those of the new place.
 
 On the city and place profiles, if the map icon is clicked on, the page slides up and resets the map's center and zoom.
+Live weather is provided by the Wunderground API.
 
 Users can comment on places, to say whether or not they enjoyed their visit.
 Users can also be reviewed, based on the qulity of their posts and their helpfulness.
