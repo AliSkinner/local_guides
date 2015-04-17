@@ -52,12 +52,19 @@ $(document).ready(function(){
       $(".user").on('click', function(){
         renderUser($(this).data("user-id"));
       });
-      
+
+      var lat = parseFloat($("#city-profile-map").attr("data-lat"));
+      var lng = parseFloat($("#city-profile-map").attr("data-lng"));
+      getWeather(lat, lng);
     });
+
+    
+    
+    
+
     var sectionHeight = $(window).height() * 0.65;
     $("#city-profile").css("height", sectionHeight);
     $("#city-profile").removeClass("hidden");
-
   };
 
   var dropDown = $("#city-select");
@@ -96,3 +103,27 @@ $(document).ready(function(){
   });
 
 })
+
+
+
+function getWeather(lat, lng){
+  $.ajax({
+    url: "http://api.wunderground.com/api/b6f59bc8ca6b470e/conditions/q/" + lat + "," + lng + ".json",
+    type: 'GET',
+  }).done(function(response){
+    console.log(response.current_observation.temp_c, response.current_observation.icon_url);
+    var temp = response.current_observation.temp_c;
+    var icon = response.current_observation.icon_url;
+    $("#temp").prepend(temp);
+    $("#weather-icon").attr('src', icon);
+
+  });
+};
+
+
+
+
+
+
+
+
