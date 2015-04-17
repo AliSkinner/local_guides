@@ -21,12 +21,20 @@ function renderUser(userId) {
 
   // populating user's review section
 
-  $.each(user.reviews, function(index, review){
-    
-    var reviewer = getUser(review.reviewer_id);
+  if (user.reviews.length < 1) {
+    $("#user-profile-reviews").append("<div class='faded'><h4 id='no-review-message'>Be the first to rate " + user.name.match(/\w+/)[0] + "!</h4></div>");
+  } else {
 
-    $("#user-profile-reviews").append('<div class="review user col-md-10" data-user-id=' + review.reviewer_id + '><img src=' + reviewer.image.profile.url + ' class="review-user-pic col-md-3"><div class="col-md-9"><p>' + review.body + '</p><span class="bold">' + reviewer.name + '</span></div></div>')
-  });
+    $.each(user.reviews, function(index, review){
+    
+      var reviewer = getUser(review.reviewer_id);
+
+      $("#user-profile-reviews").append('<div class="review user col-md-10" data-user-id=' + review.reviewer_id + '><img src=' + reviewer.image.profile.url + ' class="review-user-pic col-md-3"><div class="col-md-9"><p>' + review.body + '</p><span class="bold">' + reviewer.name + '</span></div></div>')
+    });
+
+    $(".comment:even").css( "background-color", "#006064" ); 
+
+  };
 
   $("#user-profile").removeClass("hidden");
   $('html, body').animate({

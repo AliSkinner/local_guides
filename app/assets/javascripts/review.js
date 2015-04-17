@@ -18,16 +18,18 @@ function createReview() {
     var reviewer = getUser(review.reviewer_id)
     var reviewContent = '<div class="review user col-md-10" data-user-id=' + reviewer.id + '><img src=' + reviewer.image.profile.url + ' class="review-user-pic col-md-3"><div class="col-md-9"><p>' + review.body + '</p><span class="bold">' + reviewer.name + '</span></div></div>'
 
-    if ($("#user-profile-reviews").children().size() > 1){
+    if ($("#user-profile-reviews").children().size() > 2){
       $("#user-profile-reviews").children().first().after(reviewContent);
     } else {
+      $("#no-review-message").hide();
       $("#user-profile-reviews").append(reviewContent);
     };
+
   });
+  
 
 };
 
 
 
 
-//      $(".comment:even").css( "background-color", "#bbf" ); 

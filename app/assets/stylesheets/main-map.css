@@ -12,22 +12,23 @@
 }
 
 #new-form {
-  height:15%;
+  height:16%;
   display:none;
-  margin-left: 62px;
+  /*margin-left: 62px;*/
+  margin:0 auto;
   font-weight: bold;
   margin-top: 10px;
   background-color: #E0F7FA;
   padding: 1%;
   border-radius: 5px;
-  width:90%;
+  width:70%;
 
 }
 
 
 #new-image {
   display:inline-block;
-  margin-left: 62px;
+  /*margin-left: 62px;*/
   margin-top: 10px;
 }
 
@@ -40,7 +41,7 @@
   display: inline-block;
   margin-left: auto;
   position: absolute;
-  right: 40%;
+  /*right: 40%;*/
 }
 
 .place-form-section{
@@ -50,6 +51,7 @@
 #submit-place-form {
   position: absolute;
   bottom: 0;
-  left: 0;
+  right:2%;
+  margin-top: 10px;
 }
 
