@@ -20,7 +20,7 @@ function createComment() {
     var commentContent = '<div class="comment user col-md-10" data-user-id=' + user.id + '><img src=' + user.image.profile.url + ' class="comment-user-pic col-md-4"><div class="col-md-8"><p>' + comment.body + '</p><span class="bold">' + user.name + '</span></div></div>'
 
     if ($("#place-profile-comments").children().size() > 1){
-      $("#place-profile-comments").children().first().next().prepend(commentContent);
+      $("#place-profile-comments").children().first().after(commentContent);
     } else {
       $("#place-profile-comments").append(commentContent);
     };
