@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   resources :comments
   resources :reviews
 
+  resources :users do
+      collection do
+        post 'new_mail', :action => :send_mail
+      end 
+    end
+
 
   # You can have the root of your site routed with "root"
   root 'places#index'

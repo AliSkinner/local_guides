@@ -60,6 +60,14 @@ function renderUser(userId) {
 
 
 
+
+
+
+
+
+
+
+
 function showPlaces() {
   $("#user-profile-places").siblings().fadeOut();
   $("#review-box").hide();
@@ -73,6 +81,7 @@ function showReviews() {
 };
 
 function showChat() {
+  sendEmail(1, 2, 'hello');
   $("#user-profile-chat").siblings().fadeOut();
   $("#review-box").hide();
   $("#user-profile-chat").fadeIn();
@@ -91,5 +100,16 @@ function getCity(cityId) {
   return city;
 }
 
+function sendEmail(sender, recipient, message){
 
+  $.ajax({
+    url: '/users/new_mail/',
+    type: 'POST',
+    dataType: 'json',
+    data: { new_mail : { 'user_id' : sender, 'recipient_id' : recipient, 'message' : message}}
+  }).done(function(response){
+    console.log(response);
+  });
+
+};
 
