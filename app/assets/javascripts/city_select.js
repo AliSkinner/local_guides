@@ -111,6 +111,8 @@ $(document).ready(function(){
     var mailSender  = parseInt($("#current-user-id").text());
     var mailRecipient = parseInt($("#user-profile-user-id").text());
     sendEmail(mailSender, mailRecipient, mailContent);
+    $('#success').fadeIn().delay(5000).fadeOut();
+
   });
 
 })

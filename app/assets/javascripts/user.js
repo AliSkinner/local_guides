@@ -1,7 +1,7 @@
 function renderUser(userId) {
 
   // reset default profile view
-
+  $("#success").hide();
   $("#user-profile-reviews").siblings().hide();
   $("#review-box").hide();
   $("#user-profile-reviews").fadeIn('slow');
@@ -110,6 +110,7 @@ function sendEmail(sender, recipient, message){
     data: { new_mail : { 'user_id' : sender, 'recipient_id' : recipient, 'message' : message}}
   }).done(function(response){
     console.log(response);
+    // $('#success').show().delay(5000).fadeOut();
   });
   $("#new-mail-content").val("");
 };
