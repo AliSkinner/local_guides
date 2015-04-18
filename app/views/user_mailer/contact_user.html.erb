@@ -1,19 +1,31 @@
-<div style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">
+<div style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; width:100%">
 
-<div style="background-color: #C7DAC8; position: relative; height: 6em; width:100%;">
-  <h1 style="color: #777; font-size: 4em;">LocalGuides</h1>
-</div>
-
-<div style=" height: 960px; width: 100%; position: absolute; opacity: 0.3; ">
-
-  <img src="https://s3-eu-west-1.amazonaws.com/local-guides/uploads/misc/email-background.jpg" style="height: 100%; width: 100%;">
-  <div>
-    <h1>Hey <%= @recipient.name.split.first %>, <%= @sender.name %> in <%= @sender.city.name %> wants to chat!</h1>
-
-
+  <div style="background-color: #C7DAC8; position: relative; height: 6em; width:100%;">
+    <h1 style="color: #777; font-size: 4em;">LocalGuides</h1>
   </div>
 
+  <div style=" width: 100%; position:relative;">
+
+    <img src="https://s3-eu-west-1.amazonaws.com/local-guides/uploads/misc/email-background-small.jpg" style="height: 100%; width: 100%; opacity:0.3;">
+
+    <div style="background-color: white; top: 10%; width: 70%; max-height: 60%; position: absolute; opacity: 0.8; margin-left:15%; padding:1em; border-radius:20px;">
+      <h1>Hey <%= @recipient.name.split.first %>, <%= @sender.name %> in <%= @sender.city.name %> wants to chat!</h1>
+      <br>
+      <h3>Here's the message...</h3>
+      <p><%= @message %></p>
+      <h3><a href="mailto:<%= @sender.email %>?subject=<%= @recipient.name.split.first %> from <%= @recipient.city.name %> here!" style="text-decoration:none; color:black;">Reply to <%= @sender.name.split.first %></a></h3>
+    </div>
+
+    <!-- <div style="background-color: #C7DAC8; position: absolute; height: 6em; width:100%; bottom:0;">
+      <a href="http://local-guides.herokuapp.com/"><h1 style="color: #777; font-size: 4em;">LocalGuides</h1></a>
+      
+    </div> -->
+  
+    <div style="background-color: #C7DAC8; position: absolute; height: 6em; width:100%; bottom: 0; color: #777;">
+      <h1 style="font-size: 3em; display:inline-block;">LocalGuides</h1>
+      <span style="position:absolute; right:3%; bottom:5%;"> LocalGuides. London, 2015</span>
+    </div>
+  </div>
 
 </div>
 
-</div>
