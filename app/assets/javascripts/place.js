@@ -54,6 +54,7 @@ function commentBoxPlacement() {
     console.log('removed')
     var a = $("#comment-box").detach();
     $("#place-profile-id").after(a);
+    
   } 
     else if ($("#comment-box").height() + $("#place-profile-picture").height() <= $("#place-middle-box").height() && !$.contains($("#place-middle-box"), $("#comment-box"))) {
 
