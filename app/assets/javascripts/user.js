@@ -56,6 +56,8 @@ function renderUser(userId) {
   $(".place").on('click', function(){
    renderPlace($(this).data("place-id"))
  });
+
+  
 };
 
 
@@ -81,7 +83,6 @@ function showReviews() {
 };
 
 function showChat() {
-  sendEmail(1, 2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam hic, optio natus quo minus aperiam ipsa architecto numquam. Porro illo, quod ratione maiores soluta. Fugiat harum et possimus, illum eaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi soluta minima reiciendis voluptas vero necessitatibus adipisci molestias, debitis. Impedit reprehenderit cum illum recusandae obcaecati necessitatibus numquam, soluta harum repellendus eius?');
   $("#user-profile-chat").siblings().fadeOut();
   $("#review-box").hide();
   $("#user-profile-chat").fadeIn();
@@ -110,6 +111,6 @@ function sendEmail(sender, recipient, message){
   }).done(function(response){
     console.log(response);
   });
-
+  $("#new-mail-content").val("");
 };
 

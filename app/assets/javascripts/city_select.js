@@ -106,6 +106,13 @@ $(document).ready(function(){
     }
   });
 
+  $("#submit-mail-button").on('click', function(){
+    var mailContent = $("#new-mail-content").val();
+    var mailSender  = parseInt($("#current-user-id").text());
+    var mailRecipient = parseInt($("#user-profile-user-id").text());
+    sendEmail(mailSender, mailRecipient, mailContent);
+  });
+
 })
 
 
