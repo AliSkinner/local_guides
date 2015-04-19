@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
 
   
   # binding.pry
-  mail(:to => @recipient.email, :subject => "Registered")
+  mail(:to => @recipient.email, :subject => "You've got a message from a Local Guide!")
   # self.contact_user(recipient).deliver
   end
 

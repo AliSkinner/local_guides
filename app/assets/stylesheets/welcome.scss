@@ -1,13 +1,14 @@
 #welcome-pic {
   height: 100% ;
   width: 100%;
-  opacity: 1;
+  opacity: 0.7;
+  position: fixed;
 }
 
 #welcome {
   height: 100% ;
   width: 100%;
-  postion: relative;
+  postion: absolute;
 
   
 }
