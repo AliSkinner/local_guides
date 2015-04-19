@@ -1,7 +1,6 @@
 #welcome-pic {
   height: 100% ;
   width: 100%;
-  opacity: 0.7;
   position: fixed;
 }
 
@@ -31,4 +30,17 @@
 
 #login-button, #user_password, #user_email {
   color: black;
+}
+
+#signup-container {
+  width:30%;
+  margin-left: 2em;
+  line-height: 2;
+  // text-align: right;
+  #user_image {
+    display: inline-block;
+  }
+  input:not(#new-city-input) {
+    margin-left: 1em;
+  }
 }
