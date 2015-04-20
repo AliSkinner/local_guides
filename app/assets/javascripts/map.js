@@ -114,7 +114,6 @@ function initialize() {
 
     function setMap(lat, lng, place) {
       map.setCenter(new google.maps.LatLng(lat,lng));
-      // debugger
       if (typeof place != "undefined") {
         map.setZoom(17);
       } else {
@@ -126,16 +125,19 @@ function initialize() {
     };
     
     $("#city-profile-map").on('click', function(){
-      var lat = $(this).data("lat");
-      var lng = $(this).data("lng");
-      setMap(lat, lng)
-    })
+      console.log($(this).data("lat"));
+      console.log($(this).data("lng"));
+
+      var lat = $(this).attr("data-lat");
+      var lng = $(this).attr("data-lng");
+      setMap(lat, lng);
+    });
 
     $("#place-profile-map").on('click', function(){
       var lat = $("#place-profile-map").attr("data-lat");
       var lng = $("#place-profile-map").attr("data-lng");
-      setMap(lat, lng, "placeview")
-    })
-}
+      setMap(lat, lng, "placeview");
+    });
+};
 
 google.maps.event.addDomListener(window, 'load', initialize);

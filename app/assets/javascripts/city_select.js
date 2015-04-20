@@ -27,6 +27,8 @@ $(document).ready(function(){
       console.log(response)
       $("#city-profile-users").empty();
       $("#city-profile-places").empty();
+      $("#city-profile-map").removeAttr("data-lat");
+      $("#city-profile-map").removeAttr("data-lng");
       $(".city-profile-name").text(response.name);
       $("#city-profile-map").attr("data-lat", response.latitude);
       $("#city-profile-map").attr("data-lng", response.longitude);
@@ -41,6 +43,8 @@ $(document).ready(function(){
         });
 
       });
+
+
 
       // var defaultPlace = $("#city-profile-places").children().children().first().data("place-id");
       // renderPlace(defaultPlace);
