@@ -1,37 +1,27 @@
 #user-profile {
   background-color: #EEEEEE;
-  // color: white;
   padding-right:0;
-  // padding-bottom: 2em;
 }
 
-// #user-profile-pic, #user-profile-picture {
-//   max-height: 100%;
-// }
 
 #user-profile-picture {
   width: 100%;
-  // max-height: 100%;
   border-radius:50%;
   margin-top: 25%;
 }
 
-#user-profile-reviews {
-  padding: 10px;
-  h4 {
+#user-profile-reviews h4 {
     margin-bottom:2em;
-  }
 }
 
 #user-profile-reviews, #user-profile-places, #user-profile-chat {
   background-color: #737594;
-  padding: 15px;
-  // color: white;
-  
+  padding: 1.5em;
 }
 
 #user-profile-other {
   padding-right:0;
+  color: #EEEEEE;
 }
 
 #user-profile-details {
@@ -41,19 +31,23 @@
 
 .review {
   background-color: #EEEEEE;
-  border-radius: 20px;
-  padding: 5px;
-  margin: 5px;
+  color:black;
+  border-radius: 1em;
+  padding: .5em;
+  margin: .5em;
   margin-bottom: 2em;
-  box-shadow: 0 0 5px 10px #EEEEEE;
+  box-shadow: 0 0 .5em .5em #EEEEEE;
 }
 
 .review:even {
   background-color: #EEEEFF;
 }
 
-#user-profile-places-table td {
-  padding: 15px;
+#user-profile-places-table {
+  font-size: 1.5em;
+  td {
+  padding: 1em;
+  }
 }
 
 #user-profile-chat{
@@ -62,5 +56,9 @@
     margin-bottom: 5%;
   }
   text-align: center;
+}
+
+#new-mail-content {
+  color:black;
 }
 

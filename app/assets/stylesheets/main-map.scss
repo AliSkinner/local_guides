@@ -1,7 +1,5 @@
 #main-map-view{
   height:60%;
-  /*width:100%;*/
-
 }
 
 #map-canvas {
@@ -27,13 +25,14 @@
   border-radius: .5em;
   width:70%;
   font-size: 1em;
-
+  div {
+    overflow: auto
+  }
 }
 
 
 #new-image {
   display:inline-block;
-  /*margin-left: 62px;*/
   margin-top: 5%;
 }
 
