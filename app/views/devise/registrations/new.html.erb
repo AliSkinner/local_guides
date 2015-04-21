@@ -1,50 +1,54 @@
-<h2>Sign up</h2>
+<div id="signup-container">
+  <h2>Sign up</h2>
+<br>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.collection_select(:city_id, @cities, :id, :name, {:include_blank => "Choose Your City"}, {:class=>'user-city'} ) %>
+    <a href="#" onclick="return false" id="new-city">Hey! Where's my City?</a>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :password %>
+    <% if @validatable %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+<br>
+  <div class="field file">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
 
 
-<div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-</div><br>
-
-<div class="field">
-  <%= f.collection_select(:city_id, @cities, :id, :name, {:include_blank => "Choose Your City"}, {:class=>'user-city'} ) %>
-  <a href="#" onclick="return false" id="new-city">Hey! Where's my City?</a>
-</div><br>
-
-<div class="field">
-  <%= f.label :email %>
-  <%= f.email_field :email, autofocus: true %>
-</div><br>
-
-<div class="field">
-  <%= f.label :password %>
-  <% if @validatable %>
-  <em>(<%= @minimum_password_length %> characters minimum)</em>
+<br>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
   <% end %>
-  <%= f.password_field :password, autocomplete: "off" %>
-</div><br>
-
-<div class="field">
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation, autocomplete: "off" %>
-</div><br>
-
-<div class="field">
-  <%= f.label :image %><br />
-  <%= f.file_field :image %>
-</div><br>
 
 
+  <div class="new-city-form col-md-6 hidden">
+    <%= render "new_city" %>
+  </div>
 
-<div class="actions">
-  <%= f.submit "Sign up" %>
 </div>
-<% end %>
 
-
-<div class="new-city-form col-md-8 hidden">
-  <%= render "new_city" %>
-</div>

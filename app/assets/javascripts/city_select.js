@@ -27,6 +27,8 @@ $(document).ready(function(){
       console.log(response)
       $("#city-profile-users").empty();
       $("#city-profile-places").empty();
+      $("#city-profile-map").removeAttr("data-lat");
+      $("#city-profile-map").removeAttr("data-lng");
       $(".city-profile-name").text(response.name);
       $("#city-profile-map").attr("data-lat", response.latitude);
       $("#city-profile-map").attr("data-lng", response.longitude);
@@ -41,6 +43,8 @@ $(document).ready(function(){
         });
 
       });
+
+
 
       // var defaultPlace = $("#city-profile-places").children().children().first().data("place-id");
       // renderPlace(defaultPlace);
@@ -104,6 +108,15 @@ $(document).ready(function(){
     if ($("#new-comment").val()) {
       createComment()
     }
+  });
+
+  $("#submit-mail-button").on('click', function(){
+    var mailContent = $("#new-mail-content").val();
+    var mailSender  = parseInt($("#current-user-id").text());
+    var mailRecipient = parseInt($("#user-profile-user-id").text());
+    sendEmail(mailSender, mailRecipient, mailContent);
+    $('#success').fadeIn().delay(5000).fadeOut();
+
   });
 
 })

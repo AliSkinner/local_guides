@@ -1,7 +1,7 @@
 function renderUser(userId) {
 
   // reset default profile view
-
+  $("#success").hide();
   $("#user-profile-reviews").siblings().hide();
   $("#review-box").hide();
   $("#user-profile-reviews").fadeIn('slow');
@@ -56,6 +56,8 @@ function renderUser(userId) {
   $(".place").on('click', function(){
    renderPlace($(this).data("place-id"))
  });
+
+  
 };
 
 
@@ -81,7 +83,6 @@ function showReviews() {
 };
 
 function showChat() {
-  sendEmail(1, 2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam hic, optio natus quo minus aperiam ipsa architecto numquam. Porro illo, quod ratione maiores soluta. Fugiat harum et possimus, illum eaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi soluta minima reiciendis voluptas vero necessitatibus adipisci molestias, debitis. Impedit reprehenderit cum illum recusandae obcaecati necessitatibus numquam, soluta harum repellendus eius?');
   $("#user-profile-chat").siblings().fadeOut();
   $("#review-box").hide();
   $("#user-profile-chat").fadeIn();
@@ -109,7 +110,8 @@ function sendEmail(sender, recipient, message){
     data: { new_mail : { 'user_id' : sender, 'recipient_id' : recipient, 'message' : message}}
   }).done(function(response){
     console.log(response);
+    // $('#success').show().delay(5000).fadeOut();
   });
-
+  $("#new-mail-content").val("");
 };
 
