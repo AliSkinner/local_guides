@@ -2,8 +2,8 @@ $(document).ready(function(){
   
 
   $("#reveal-place-form").on('click', function(){
-    $("#new-form").slideToggle('slow', function(){
-    });
+    $("#new-form").slideToggle('slow');
+    formSize($(window).width());
   });
  
   
@@ -41,11 +41,23 @@ $(document).ready(function(){
     createPlace.fail(function(){
       alert("It looks like you're trying to create a place that's more than 50 miles away from your home town. How about trying something a little more local?")
     });
-  })
-})
+  });
+
+  $(window).resize(function(){
+    formSize($(window).width());
+  });
+
+});
 
 
-
+function formSize(windowWidth){
+  if (windowWidth < 1146){
+    $("#new-form, #description, #new-description, #submit-place-form").addClass('slim');
+  }
+  else {
+    $("#new-form, #description, #new-description, #submit-place-form").removeClass('slim');
+  };
+};
 
 
 

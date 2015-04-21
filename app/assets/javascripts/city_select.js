@@ -119,6 +119,8 @@ $(document).ready(function(){
 
   });
 
+  
+
 })
 
 
@@ -135,11 +137,3 @@ function getWeather(lat, lng){
     $("#weather").append('<h5>Weather now: <span id="temp">' + temp + '&degC</span> <img id="weather-icon" src=' + icon + ' alt="weather icon"></h5>');
   });
 };
-
-
-
-
-
-
-
-
