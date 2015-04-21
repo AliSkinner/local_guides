@@ -2,15 +2,14 @@
 
 <button id="reveal-place-form">create new place</button>
 
-<div id="new-form">
+<div id="new-form" >
+
   <div class="col-md-5 place-form-section">
     Title: <input size="20" type="text" id="new-title" name="lat" >
     <br>
-    <br>
     Image: <input type="file" id="new-image">
-    
-
   </div>
+
   <div class="col-md-7 place-form-section">
     Description:
     <br>
@@ -20,4 +19,5 @@
     <span class="hidden" id="user-id"><%= current_user.id %></span>
     <button id="submit-place-form">submit place</button>
   </div>
+
 </div>

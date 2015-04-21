@@ -1,14 +1,10 @@
 html, body {
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   position:relative;
 }
 
-
-body {
-  margin-bottom: 60px;
-}
 
 .hidden {
   display: none;
@@ -20,21 +16,14 @@ body {
 
 nav {
   background-color: #00BCD4;
-  // height: 7%;
-  font-size: 25px;
-  // span, #search, #login {
-  //   display: inline-block;
-  //   margin: 0 auto;
-  // }
-  a {
-    // color: inherit;
-  }
+  font-size: 2em;
+  text-align: center;
 }
 
 #login {
   display: inline-block;
   position: absolute;
-  right: 1%
+  right: 1%;
 }
 
 #logo {
@@ -56,13 +45,17 @@ nav {
 }
 
 #reveal-place-form {
-  margin-left: 62px;
-  margin-top: 10px;
+  margin-left: 5%;
+  margin-top: .7%;
 
 }
 
 .map-icon {
-  height: 50px;
+  height: 4em;
+}
+
+.map-icon:hover{
+  height: 4.1em;
 }
 
 .scroll {
@@ -75,12 +68,11 @@ nav {
 }
 
 #search {
-  position: absolute;
-  right: 50%;
+  display: inline-block;
 }
 
 #new-city {
-  font-size: 12px;
+  font-size: 0.8em;
   color: #666666;
 }
 

@@ -3,7 +3,6 @@
   
   #city-profile-picture {
     height: 50%;
-    width: 58%;
     border-radius: 50%;
   }
 
@@ -12,13 +11,13 @@
 #city-profile-places, #city-profile-users {
   font-size: 1.5em;
   img {
-    width:100px;
-    margin: 10px;
+    width:6em;
+    margin: 0.5em;
   }
 }
 
 .place {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 }
 
 #city-details {
@@ -28,7 +27,7 @@
 
 #city-left {
   height: 100%;
-  padding:20px;
+  padding:1em;
 }
 
 #city-places {
@@ -36,7 +35,7 @@
 }
 
 #city-users, #city-places {
-  padding-top: 20px;
+  padding-top: 1em;
 }
 
 #weather-icon {

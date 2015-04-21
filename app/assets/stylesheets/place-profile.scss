@@ -7,7 +7,7 @@
 }
 
 .comment {
-  margin: 5px;
+  margin: 1em;
 }
 
 #new-comment {
@@ -15,7 +15,7 @@
 }
 
 #comment-box, #review-box {
-  padding-bottom: 5px;
+  padding-bottom: 2%;
   position: absolute;
   bottom:2%;
 }
@@ -24,6 +24,8 @@
   position: absolute;
   right: 25%;
 }
+
+
 // #place-profile-details-background {
 //   height:100%;
 //   background: url('https://local-guides.s3.amazonaws.com/uploads/city/image/2/paris.jpg');
